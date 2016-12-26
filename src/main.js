@@ -7,6 +7,6 @@ import '../node_modules/semantic-ui/dist/semantic.min.js'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<App/>',
+  // template: '<App/>',
   components: { App }
 })
