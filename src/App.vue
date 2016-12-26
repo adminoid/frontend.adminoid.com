@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style>
+@import '../semantic/dist/semantic.min.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
