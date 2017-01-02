@@ -1,3 +1,1 @@
-<style>
-  @import '../../semantic/dist/semantic.min.css';
-</style>
+<style src="../../semantic/dist/semantic.min.css"></style>

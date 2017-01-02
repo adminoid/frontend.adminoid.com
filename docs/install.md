@@ -121,3 +121,7 @@ In file ```.eslintrc.js```
 +    "jQuery": true
 +  }
 ```
+
+### Links list
+[http://vuejs-templates.github.io/webpack/](http://vuejs-templates.github.io/webpack/)
+[https://vue-loader.vuejs.org/en/](https://vue-loader.vuejs.org/en/)

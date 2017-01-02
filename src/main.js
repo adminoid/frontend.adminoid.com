@@ -4,18 +4,18 @@ import Vue from 'vue'
 import Styles from './components/Styles'
 import jQuery from 'jquery'
 
+import TopMenu from './components/TopMenu'
+
 window.jQuery = jQuery
-jQuery(document).ready(function () {
-  require('../node_modules/semantic-ui/dist/semantic.min.js')
-})
+// TODO add only needed later below
+// jQuery(document).ready(function () {
+//   require('../node_modules/semantic-ui/dist/semantic.min.js')
+// })
 
 /* eslint-disable no-new */
 var GlobalVue = new Vue({
   el: '#app',
-  components: { Styles }
+  components: { Styles, TopMenu }
 })
-
-let color = jQuery('#top-menu .ui.menu .item').css('color')
-console.log(color)
 
 export { GlobalVue }
