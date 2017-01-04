@@ -25,6 +25,7 @@ if('Send should dispatch "declinedWorkflowTask" with the choice payload.', () =>
 ```
 
 ## Chai
+[http://chaijs.com/](http://chaijs.com/)
 This is testing vars, value
 Example:
 ```javascript
