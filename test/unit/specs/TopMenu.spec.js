@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
+// import TweenLite from 'node_modules/gsap/src/uncompressed/TweenLite.js'
+// import TimelineLite from 'node_modules/gsap/src/uncompressed/TimelineLite.js'
+// import TweenLite from 'gsap/src/uncompressed/TweenLite';
+// import TimelineLite from 'gsap/src/uncompressed/TimelineLite';
+import { TweenLite, TimelineLite, CSSPlugin } from 'gsap'
 
 describe('testing component TopMenu', () => {
   sinon.spy(TopMenu.methods, 'checkTopOffset')
-  // var vm1 = new Vue(TopMenu)
+  sinon.spy(TopMenu.methods, 'runLogoAnimation')
   /* eslint-disable no-new */
   var vmTopMenu = new Vue(TopMenu)
-  it('expect top offset needed for run logotype animation', (done) => {
+  it('expect top offset the threshold limit needed for run logotype animation', (done) => {
     expect(vmTopMenu.settings.topOffsetForToggleAnimation).to.be.above(1)
     done()
   })
@@ -15,13 +20,38 @@ describe('testing component TopMenu', () => {
     done()
   })
   it('check distance of the top on created', (done) => {
-    // expect(window.pageYOffset).to.equal(0)
     expect(vmTopMenu.topOffset === window.pageYOffset).is.true
     done()
   })
-  it('if set topOffset to (topOffsetForToggleAnimation + 1) must run forward animation', (done) => {
-    let bigOffset = vmTopMenu.settings.topOffsetForToggleAnimation + 1
-    vmTopMenu.topOffset = bigOffset
+  it('gsap: TweenLite are loadable', (done) => {
+    expect(TweenLite).to.be.a('function')
     done()
+  })
+  it('gsap: TimelineLite are loadable', (done) => {
+    expect(TimelineLite).to.be.a('function')
+    done()
+  })
+  it('gsap: CSSPlugin are loadable', (done) => {
+    expect(CSSPlugin).to.be.a('function')
+    done()
+  })
+  it('if set topOffset to (topOffsetForToggleAnimation + 1) must run forward animation', (done) => {
+    vmTopMenu.topOffset = vmTopMenu.settings.topOffsetForToggleAnimation + 1
+    vmTopMenu.$nextTick(function () {
+      expect(TopMenu.methods.runLogoAnimation.callCount).to.equal(1)
+      done()
+    })
+  })
+  it('if set topOffset to (topOffsetForToggleAnimation - 1) must run backward animation and direction == backward', (done) => {
+    vmTopMenu.topOffset = vmTopMenu.settings.topOffsetForToggleAnimation - 1
+    vmTopMenu.$nextTick(function () {
+      it('if set topOffset to (topOffsetForToggleAnimation - 1) must run backward animation', () => {
+        expect(TopMenu.methods.runLogoAnimation.callCount).to.equal(2)
+      })
+      it('if set topOffset to (topOffsetForToggleAnimation - 1) direction argument must be "backward"', () => {
+        expect(TopMenu.methods.runLogoAnimation.getCall(1).args[0]).to.equal('backward')
+      })
+      done()
+    })
   })
 })

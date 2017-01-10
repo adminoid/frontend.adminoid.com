@@ -7,7 +7,7 @@ import jQuery from 'jquery'
 import TopMenu from './components/TopMenu'
 
 window.jQuery = jQuery
-// TODO add only needed later below
+// TODO uncomment below if need later semantic ui (js) and jQuery
 // jQuery(document).ready(function () {
 //   require('../node_modules/semantic-ui/dist/semantic.min.js')
 // })

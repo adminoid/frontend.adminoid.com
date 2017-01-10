@@ -15,11 +15,18 @@
     methods: {
       checkTopOffset: function () {
         this.topOffset = window.pageYOffset
+      },
+      runLogoAnimation: function (direction = 'forward') {
+//        console.log(direction)
       }
     },
     watch: {
       topOffset: function (val, oldVal) {
-        console.log('new: %s, old: %s', val, oldVal)
+        if (oldVal < this.settings.topOffsetForToggleAnimation && val >= this.settings.topOffsetForToggleAnimation) {
+          this.runLogoAnimation()
+        } else if (oldVal >= this.settings.topOffsetForToggleAnimation && val < this.settings.topOffsetForToggleAnimation) {
+          this.runLogoAnimation('backward')
+        }
       }
     }
   }
