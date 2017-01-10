@@ -1,9 +1,5 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
-// import TweenLite from 'node_modules/gsap/src/uncompressed/TweenLite.js'
-// import TimelineLite from 'node_modules/gsap/src/uncompressed/TimelineLite.js'
-// import TweenLite from 'gsap/src/uncompressed/TweenLite';
-// import TimelineLite from 'gsap/src/uncompressed/TimelineLite';
 import { TweenLite, TimelineLite, CSSPlugin } from 'gsap'
 
 describe('testing component TopMenu', () => {
