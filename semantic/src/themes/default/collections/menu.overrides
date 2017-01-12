@@ -68,11 +68,11 @@
         width: 219px;
         > a {
           padding-top: 5px;
-          #header-logo-svg{
-            g#eye-pupil{
-              opacity: 0;
-            }
-          }
+          //#header-logo-svg{
+          //  g#eye-pupil{
+          //    opacity: 0;
+          //  }
+          //}
         }
       }
       g#webmaster {

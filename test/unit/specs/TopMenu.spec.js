@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
-import { TweenLite, TimelineLite, CSSPlugin } from 'gsap'
 
 describe('testing component TopMenu', () => {
   sinon.spy(TopMenu.methods, 'checkTopOffset')
