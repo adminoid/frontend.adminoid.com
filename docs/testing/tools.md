@@ -1,12 +1,13 @@
 # Tools for unit and e2e testing
 
 ## Sinon.JS
-This is spies for testing functions, methods and so on
-Example:
+This is spies for testing functions, methods and so on  
+[https://habrahabr.ru/company/ua-hosting/blog/274317/](https://habrahabr.ru/company/ua-hosting/blog/274317/)  
+Example:  
 ```javascript
 var callback = sinon.spy();
-```
-Test with Sinon.JS
+```  
+Test with Sinon.JS  
 ```javascript
 if('Send should dispatch "declinedWorkflowTask" with the choice payload.', () => {
   const vm = getComponent('Bob').$mount();
@@ -26,12 +27,12 @@ if('Send should dispatch "declinedWorkflowTask" with the choice payload.', () =>
 
 ## Chai
 [http://chaijs.com/](http://chaijs.com/)
-This is testing vars, value
-Example:
+This is testing vars, value  
+Example:  
 ```javascript
 expect(foo).to.be.a('string');
 ```
-Test with Chai
+Test with Chai  
 ```javascript
 it('Should be valid only when a radio option is selected.', () => {
   const vm = getComponent('Bob').$mount();
@@ -46,8 +47,8 @@ it('Should be valid only when a radio option is selected.', () => {
 ```
 
 ## Mocha
-Framework for test wrapping
-Example:
+Framework for test wrapping  
+Example:  
 ```javascript
 var assert = require('assert');
 describe('Array', function() {
@@ -60,8 +61,8 @@ describe('Array', function() {
 ```
 
 ## Nightwatch.js
-Testing with Selenium browser automation server
-Example:
+Testing with Selenium browser automation server  
+Example:  
 ```javascript
 module.exports = {
   'e2e tests for portfolio': function (browser) {

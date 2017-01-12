@@ -23,9 +23,6 @@
             topMenuId: 'top-menu',
             topMenuItemClass: 'item'
           }
-        },
-        states: {
-          animationRuns: false
         }
       }
     },
@@ -33,16 +30,19 @@
       this.checkTopOffset()
       window.addEventListener('scroll', this.checkTopOffset)
     },
+    mounted () {
+      this.timeline = this.compileTimeline()
+      this.timeline.reverse(1)
+    },
     methods: {
       checkTopOffset: function () {
         this.topOffset = window.pageYOffset
       },
       runLogoAnimation: function (direction = 'forward') {
-        let timeline = this.compileTimeline()
         if (direction === 'forward') {
-          timeline.play()
+          this.timeline.play()
         } else if (direction === 'backward') {
-          timeline.reverse(0)
+          this.timeline.reverse(0)
         }
       },
       // I'm add only that method, and edit runLogoAnimation ^^^
@@ -104,31 +104,28 @@
             {y: -10, x: 20, rotation: 35, transformOrigin: '50% 50%'}
         ), 0)
         // Body, part 2
-        tlBody.add('body2', part1time)
         tlBody.add(TweenMax.fromTo(manBody, part2time,
           {y: -10, x: 20, rotation: 35, transformOrigin: '50% 50%'},
           {y: -5, x: 180, rotation: 90, transformOrigin: '50% 50%'}
-        ), 'body2')
+        ), part1time)
         // Head
         var tlHead = new TimelineLite()
         tlHead.fromTo(head, 0.3,
-          {opacity: 1},
-          {opacity: 0}
+          {autoAlpha: 1},
+          {autoAlpha: 0}
         )
         // SVG img size (begin from part1time)
         var tlLogoSize = new TimelineLite()
-        tlLogoSize.add('body2', part1time)
         tlLogoSize.add(TweenMax.fromTo(logo, part1time,
             {attr: {viewBox: '0 0 219 53'}, width: 219, height: 53},
             {attr: {viewBox: '0 0 219 42'}, width: 219, height: 42}
-        ), 'body2')
+        ), part1time)
         // Eye-pupil
         var tlEyePupil = new TimelineLite()
-        tlEyePupil.add('body2', part1time)
         tlEyePupil.add(TweenMax.fromTo(eyePupil, part1time,
-            {opacity: 0},
-            {opacity: 1}
-        ), 'body2')
+            {autoAlpha: 0},
+            {autoAlpha: 1}
+        ), part1time)
         // Text adminoid
         var tlTextAdminoid = new TimelineLite()
         tlTextAdminoid.add(TweenMax.fromTo(textAdminoid, part1time + part2time,
@@ -139,27 +136,24 @@
         var tlTextWebmaster = new TimelineLite()
         tlTextWebmaster.add(
           TweenMax.staggerFromTo(lettersWebmaster.reverse(), (0.1),
-            {opacity: 1},
-            {opacity: 0},
+            {autoAlpha: 1},
+            {autoAlpha: 0},
             0.05
           )
         )
         // Webmaster Wrapper
         var tlTextWebmasterWrapper = new TimelineLite()
-        tlTextWebmasterWrapper.add('body2', 0.2)
         tlTextWebmasterWrapper.add(TweenMax.fromTo(textsWebmasterWrapper, 0.5,
-            {opacity: 1},
-            {opacity: 0}
-        ), 'body2')
+            {autoAlpha: 1},
+            {autoAlpha: 0}
+        ), 0.2)
         // TopMenu height reduction/increase
         var tlTopMenu = new TimelineLite()
-        tlTopMenu.add('body2', part1time)
-        console.log(topMenuItemsForResizing)
         tlTopMenu.add(TweenMax.staggerFromTo(topMenuItemsForResizing, part1time,
             {height: '4.66667rem'},
             {height: '3.66667rem'},
             0
-        ), 'body2')
+        ), part1time)
         // Conclusion
         var timeline = new TimelineLite({paused: true})
         timeline.add(tlHands, 0)
