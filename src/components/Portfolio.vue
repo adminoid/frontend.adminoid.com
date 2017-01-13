@@ -1,3 +1,7 @@
 <script>
-  console.log('Portfolio loaded')
+  export default {
+    testFunc: () => {
+      console.log('Portfolio loaded')
+    }
+  }
 </script>

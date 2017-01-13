@@ -12,8 +12,7 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './src/main.js',
-    portfolio: './src/components/Portfolio.vue'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,

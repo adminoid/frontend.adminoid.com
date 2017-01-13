@@ -12,10 +12,12 @@ import TopMenu from './components/TopMenu'
 // })
 
 const page = 'no-portfolio'
-if (page) {
+// const page = 'portfolio'
+if (page === 'portfolio') {
   require.ensure([], function () {
     /* eslint-disable no-unused-vars */
     let Portfolio = require('./components/Portfolio')
+    console.log(Portfolio)
   })
 }
 
