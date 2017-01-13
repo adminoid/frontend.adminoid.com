@@ -123,5 +123,10 @@ In file ```.eslintrc.js```
 ```
 
 ### Links list
+_About webpack stuff_
 [http://vuejs-templates.github.io/webpack/](http://vuejs-templates.github.io/webpack/)
 [https://vue-loader.vuejs.org/en/](https://vue-loader.vuejs.org/en/)
+_About code splitting_
+<https://vuejs.org/v2/guide/ssr.html>
+<https://webpack.github.io/docs/code-splitting.html>
+<https://github.com/chrisvfritz/prerender-spa-plugin>

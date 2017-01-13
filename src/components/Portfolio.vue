@@ -1,3 +1,3 @@
 <script>
-  console.log('Zoom loaded')
+  console.log('Portfolio loaded')
 </script>

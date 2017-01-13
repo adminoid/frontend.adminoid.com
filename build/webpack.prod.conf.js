@@ -31,6 +31,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"portfolio", /* filename= */"portfolio.js"),
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jquery: 'jquery',

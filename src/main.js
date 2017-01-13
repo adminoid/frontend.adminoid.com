@@ -11,6 +11,14 @@ import TopMenu from './components/TopMenu'
 //   require('../node_modules/semantic-ui/dist/semantic.min.js')
 // })
 
+const page = 'no-portfolio'
+if (page) {
+  require.ensure([], function () {
+    /* eslint-disable no-unused-vars */
+    let Portfolio = require('./components/Portfolio')
+  })
+}
+
 /* eslint-disable no-new */
 var GlobalVue = new Vue({
   el: '#app',
