@@ -20,6 +20,7 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"portfolio", /* filename= */"portfolio.js"),
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jquery: 'jquery',
