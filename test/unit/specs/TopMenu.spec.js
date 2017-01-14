@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
+import {TweenMax, TimelineLite} from 'gsap'
 
 describe('testing component TopMenu', () => {
   sinon.spy(TopMenu.methods, 'checkTopOffset')
@@ -19,15 +20,11 @@ describe('testing component TopMenu', () => {
     done()
   })
   it('gsap: TweenLite are loadable', (done) => {
-    expect(TweenLite).to.be.a('function')
+    expect(TweenMax).to.be.a('function')
     done()
   })
   it('gsap: TimelineLite are loadable', (done) => {
     expect(TimelineLite).to.be.a('function')
-    done()
-  })
-  it('gsap: CSSPlugin are loadable', (done) => {
-    expect(CSSPlugin).to.be.a('function')
     done()
   })
   it('if set topOffset to (topOffsetForToggleAnimation + 1) must run forward animation', (done) => {
