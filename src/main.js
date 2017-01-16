@@ -5,26 +5,33 @@ import Styles from './components/Styles'
 import TopMenu from './components/TopMenu'
 
 // TODO uncomment below if need later semantic ui (js) and jQuery
-// import jQuery from 'jquery'
+import jQuery from 'jquery'
+var $ = jQuery
 // window.jQuery = jQuery
 // jQuery(document).ready(function () {
 //   require('../node_modules/semantic-ui/dist/semantic.min.js')
 // })
-
-const page = 'no-portfolio'
-// const page = 'portfolio'
-if (page === 'portfolio') {
-  require.ensure([], function () {
-    /* eslint-disable no-unused-vars */
+var pageName = $('.ui.page.container').attr('id')
+var components = {}
+switch (pageName) {
+  case 'portfolio':
     let Portfolio = require('./components/Portfolio')
-    console.log(Portfolio)
-  })
+    components = {Styles, TopMenu, Portfolio}
+    break
+  default:
+    components = {Styles, TopMenu}
 }
-
+console.log(components)
 /* eslint-disable no-new */
 var GlobalVue = new Vue({
   el: '#app',
-  components: { Styles, TopMenu }
+  components: components
 })
 
 export { GlobalVue }
+
+// require.ensure([], function () {
+//   /* eslint-disable no-unused-vars */
+//   let Portfolio = require('./components/Portfolio')
+//   components = {Styles, TopMenu, Portfolio}
+// })
