@@ -14,7 +14,7 @@ describe('main.js - index javascript file of app', () => {
     // expect(vm).to.be.a('object')
     expect(GlobalVue.$el).to.be.object
   })
-  xit('jQuery loaded', () => {
-    expect(jQuery).to.be.object
-  })
+  // xit('jQuery loaded', () => {
+  //   expect(jQuery).to.be.object
+  // })
 })
