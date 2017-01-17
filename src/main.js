@@ -21,7 +21,6 @@ switch (pageName) {
   default:
     components = {Styles, TopMenu}
 }
-console.log(components)
 /* eslint-disable no-new */
 var GlobalVue = new Vue({
   el: '#app',
