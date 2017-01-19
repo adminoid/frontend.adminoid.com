@@ -23,7 +23,8 @@ describe('Zoom component tests', () => {
         it('expect calculateSizesAndProportions method', () => {
           expect(vm.$refs.component.calculateSizesAndProportions).is.a('function')
         })
-        xit('check for calculateSizesAndProportions set width', () => {
+        it('check for calculateSizesAndProportions set width', () => {
+          console.log(vm.$refs.component.$el)
         })
         xit('check for calculateSizesAndProportions set height', () => {
         })
