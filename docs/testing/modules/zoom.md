@@ -21,4 +21,10 @@ $(document).trigger(e);
 ```
 
 ## Unit testing plan
--   sdf
+-   check for params wrapper, image, startX, startY are passed
+-   when start calculate params width, height (and may be proportions) of wrapper and image
+-   when start calculate proportions by x and y axis (horizontalProportion=imgWidth/wrapperWidth, imgHeight/wrapperHeight)
+-   on mousemove make watcher
+    -   dynamic change leftCursorOffset and topCursorOffset
+-   make computed property leftImageOffset and topImageOffset
+    > leftImageOffset=leftCursorOffset\*horizontalProportion, topImageOffset=topCursorOffset\*verticalProportion

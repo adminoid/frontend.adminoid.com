@@ -18,7 +18,7 @@ describe('tests for component TopMenu', () => {
       })
     })
     it('add event listener on scroll, bind it to checkTopOffset() method', () => {
-      expect(window.onscroll).is.function
+      expect(window.onscroll).is.a('function')
     })
     it('timeline is created and put to $data', () => {
       let vmTopMenu = new Vue(TopMenu)
@@ -37,7 +37,7 @@ describe('tests for component TopMenu', () => {
         vmTopMenu.topOffset = vmTopMenu.settings.topOffsetForToggleAnimation
         // check for runLogoAnimation method +1 times
         vmTopMenu.$nextTick(function () {
-          expect(TopMenu.methods.runLogoAnimation.getCall(0).args[0]).to.be.undefined
+          expect(TopMenu.methods.runLogoAnimation.getCall(0).args[0]).is.a('undefined')
           done()
         })
       })

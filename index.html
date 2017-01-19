@@ -39,8 +39,8 @@
   </div>
   <div class="pusher page-content">
 
+    <!-- <div is="top-menu" inline-template></div> -->
     <top-menu inline-template>
-
       <div class="ui fixed menu" id="top-menu">
         <div class="ui grid container">
           <div class="four wide column">
@@ -213,8 +213,8 @@
           </div>
         </div>
       </div>
-
     </top-menu>
+
     <div class="ui page container" id="portfolio">
 
       <h1 class="ui blue header">Инструменты, которые я использую для создания сайтов</h1>
@@ -268,13 +268,15 @@
               <h3 class="left floated">Админка заказов для Интернет-магазина ikmed.ru</h3>
               <div class="right floated meta yellow"><i class="calendar icon"></i>2015</div>
             </div>
-            <div class="content window fix" id="ikmed-orders">
-              <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
-                   alt="">
-              <img class="chrome-1"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-orders/chrome.jpg"
-                   alt="">
-            </div>
+            <zoom wrapper="#ikmed-orders" image=".zoom" start="10|20" inline-template>
+              <div class="content window fix" id="ikmed-orders">
+                <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
+                     alt="">
+                <img class="chrome-1 zoom"
+                     src="/static/img/adminoid/pages/portfolio/presentations/ikmed-orders/chrome.jpg"
+                     alt="">
+              </div>
+            </zoom>
             <div class="extra content">
                     <span class="right floated links">
                         <a href="https://bitbucket.org/adminoid/ikmed.ru/"><i class="bitbucket icon"></i>https://bitbucket.org/adminoid/ikmed.ru/</a>

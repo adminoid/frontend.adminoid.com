@@ -15,8 +15,8 @@ var pageName = $('.ui.page.container').attr('id')
 var components = {}
 switch (pageName) {
   case 'portfolio':
-    let Portfolio = require('./components/Portfolio')
-    components = {Styles, TopMenu, Portfolio}
+    let Zoom = require('./components/Zoom')
+    components = {Styles, TopMenu, Zoom}
     break
   default:
     components = {Styles, TopMenu}

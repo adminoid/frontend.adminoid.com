@@ -56,7 +56,13 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
-    files: ['./index.js'],
+    files: [
+      './index.js'
+    ],
+    // for line below works need run command "npm run dev"
+    proxies: {
+      '/static': 'http://localhost:8080/static'
+    },
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
