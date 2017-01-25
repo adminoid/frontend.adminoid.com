@@ -18,7 +18,7 @@ describe('tests for component TopMenu', () => {
       })
     })
     it('add event listener on scroll, bind it to checkTopOffset() method', () => {
-      expect(window.onscroll).is.a('function')
+      expect(window.scroll).is.a('function')
     })
     it('timeline is created and put to $data', () => {
       let vmTopMenu = new Vue(TopMenu)

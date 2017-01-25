@@ -35,10 +35,15 @@
     },
     mounted () {
       this.checkTopOffset()
-      window.onscroll = this.checkTopOffset
       this.initFlicker()
       this.timeline = this.compileTimeline()
       this.timeline.reverse(1)
+    },
+    created: function () {
+      window.addEventListener('scroll', this.checkTopOffset)
+    },
+    beforeDestroy: function () {
+      window.removeEventListener('scroll', this.checkTopOffset)
     },
     watch: {
       topOffset: function (val, oldVal) {

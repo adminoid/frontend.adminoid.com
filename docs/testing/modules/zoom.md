@@ -28,3 +28,13 @@ $(document).trigger(e);
     -   dynamic change leftCursorOffset and topCursorOffset
 -   make computed property leftImageOffset and topImageOffset
     > leftImageOffset=leftCursorOffset\*horizontalProportion, topImageOffset=topCursorOffset\*verticalProportion
+
+## Plan about zooming
+-   when start calculate scale
+    -   select max proportion and set as scale
+-   when mouseover set scale to 1
+-   when mousemove computed css transform-origin:
+    ```
+    ((e.pageX - this.offset.left)/this.width)*100
+    ((e.pageY - this.offset.top)/this.height)*100
+    ```
