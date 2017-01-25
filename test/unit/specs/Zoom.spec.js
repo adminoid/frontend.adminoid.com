@@ -3,6 +3,10 @@ import Zoom from 'src/components/Zoom'
 import Styles from 'src/components/Styles'
 import $ from 'jquery'
 
+describe('new tests', () => {
+  assert(isNaN(pow(2, -1)), "pow(2, -1) не NaN")
+})
+
 describe('Zoom component tests', () => {
   describe('check startup setup selectors', () => {
     // $(window).width(5000).height(1300)

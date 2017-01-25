@@ -1,4 +1,22 @@
+## Новые итоги
+**describe** - это описание группы проверок **it**, в нем задаются:
+```javascript
+describe("Тест", function() {
 
+  before(function() { alert("Начало тестов") })
+  after(function() { alert("Конец тестов") })
+
+  beforeEach(function() { alert("Вход в тест") })
+  afterEach(function() { alert("Выход из теста") })
+
+  it('тест 1', function() { alert('1') })
+  it('тест 2', function() { alert('2') })
+
+})
+```
+
+
+---
 
 ## Sinon.spy()
 Что бы он нормально работал, надо назначать шпиона на модуль до реализации
