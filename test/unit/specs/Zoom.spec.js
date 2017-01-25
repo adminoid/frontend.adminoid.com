@@ -91,46 +91,56 @@ describe('Zoom component tests', () => {
         expect(cmp.initialData.scale).is.equal(maxProportion)
       })
       describe('check events', () => {
-        describe('test startZoom on mouseenter and other calculations', () => {
-          describe('tests for startZoom method (run on mouseenter)', () => {
-            let callsStartZoomBeforeMouseenter = Zoom.methods.startZoom.callCount
-            let e = document.createEvent('HTMLEvents')
-            e.initEvent('mouseenter', true, true)
-            e.pageX = 50
-            e.pageY = 100
-            cmp.$el.dispatchEvent(e)
-            it('check run startZoom method on mouseenter', (done) => {
-              cmp.$nextTick(() => {
-                expect(Zoom.methods.startZoom.callCount).is.equal(callsStartZoomBeforeMouseenter + 1)
-                done()
-              })
-            })
-            it('check X cursor position is right', () => {
-              expect(cmp.cursor.x).is.equal(35)
-            })
-            it('check Y cursor position is right', () => {
-              expect(cmp.cursor.y).is.equal(85)
-            })
-          })
-        })
-        it('check run startZoom method on mousemove', (done) => {
-          let callsOnZoomBeforeMousemove = Zoom.methods.onZoom.callCount
-          var e = document.createEvent('HTMLEvents')
-          e.initEvent('mousemove', true, true)
+        describe('tests for startZoom method (run on mouseenter)', () => {
+          let callsStartZoomBeforeMouseenter = Zoom.methods.startZoom.callCount
+          let e = document.createEvent('HTMLEvents')
+          e.initEvent('mouseenter', true, true)
+          e.pageX = 50
+          e.pageY = 100
           cmp.$el.dispatchEvent(e)
-          cmp.$nextTick(() => {
-            expect(Zoom.methods.onZoom.callCount).is.equal(callsOnZoomBeforeMousemove + 1)
-            done()
+          it('check run startZoom method on mouseenter', (done) => {
+            cmp.$nextTick(() => {
+              expect(Zoom.methods.startZoom.callCount).is.equal(callsStartZoomBeforeMouseenter + 1)
+              done()
+            })
+          })
+          it('startZoom check X cursor position is right', () => {
+            expect(cmp.cursor.x).is.equal(35)
+          })
+          it('startZoom check Y cursor position is right', () => {
+            expect(cmp.cursor.y).is.equal(85)
           })
         })
-        it('check run stopZoom method on mouseleave', (done) => {
+        describe('tests for onZoom method (run on mouseenter)', () => {
+          let callsOnZoomBeforeMousemove = Zoom.methods.onZoom.callCount
+          let e = document.createEvent('HTMLEvents')
+          e.initEvent('mousemove', true, true)
+          e.pageX = 150
+          e.pageY = 200
+          cmp.$el.dispatchEvent(e)
+          it('check run onZoom method on mousemove', (done) => {
+            cmp.$nextTick(() => {
+              expect(Zoom.methods.onZoom.callCount).is.equal(callsOnZoomBeforeMousemove + 1)
+              done()
+            })
+          })
+          it('onZoom check X cursor position is right', () => {
+            expect(cmp.cursor.x).is.equal(135)
+          })
+          it('onZoom check Y cursor position is right', () => {
+            expect(cmp.cursor.y).is.equal(185)
+          })
+        })
+        describe('tests for stopZoom method (run on mouseleave)', () => {
           let callsStopZoomBeforeMouseleave = Zoom.methods.stopZoom.callCount
-          var e = document.createEvent('HTMLEvents')
+          let e = document.createEvent('HTMLEvents')
           e.initEvent('mouseleave', true, true)
           cmp.$el.dispatchEvent(e)
-          cmp.$nextTick(() => {
-            expect(Zoom.methods.onZoom.callCount).is.equal(callsStopZoomBeforeMouseleave + 1)
-            done()
+          it('check run stopZoom method on mouseleave', (done) => {
+            cmp.$nextTick(() => {
+              expect(Zoom.methods.stopZoom.callCount).is.equal(callsStopZoomBeforeMouseleave + 1)
+              done()
+            })
           })
         })
       })

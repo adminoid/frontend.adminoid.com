@@ -52,6 +52,8 @@
         this.calculateCursorPosition(e)
       },
       onZoom: function (e) {
+        console.log(e.pageX)
+        this.calculateCursorPosition(e)
       },
       stopZoom: function () {
       },
@@ -83,12 +85,12 @@
          alt="">
     <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
          alt="">
-    <span class="debugger">@{{ cursor.x }} / @{{ cursor.y }}</span>
+    <span class="debugger">{{ cursor.x }} / {{ cursor.y }}</span>
   </div>
 </template>
 <style>
   .debugger {
     position: absolute;
-    margin-top: -19px;
+    top: -4px;
   }
 </style>
