@@ -49,21 +49,19 @@
         this.initialData.scale = (this.initialData.widthProportion >= this.initialData.heightProportion) ? this.initialData.widthProportion : this.initialData.heightProportion
       },
       startZoom: function (e) {
-      },
-      onZoom: function (e) {
         this.calculateCursorPosition(e)
       },
+      onZoom: function (e) {
+      },
       stopZoom: function () {
-        console.log('stopZoom')
       },
       calculateCursorPosition: function (e) {
         let $el = $(e.target)
-//        console.log($el.width())
         var padding = ($el.innerHeight() - $el.height()) / 2
-        console.info(padding)
         let xPos = e.pageX - $el.offset().left - padding
         let yPos = e.pageY - $el.offset().top - padding
-        console.info(Math.round(xPos), Math.round(yPos))
+        this.cursor.x = Math.round(xPos)
+        this.cursor.y = Math.round(yPos)
       }
     }
 //    computed: {
@@ -85,5 +83,12 @@
          alt="">
     <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
          alt="">
+    <span class="debugger">@{{ cursor.x }} / @{{ cursor.y }}</span>
   </div>
 </template>
+<style>
+  .debugger {
+    position: absolute;
+    margin-top: -19px;
+  }
+</style>

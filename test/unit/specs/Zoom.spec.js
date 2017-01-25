@@ -96,12 +96,20 @@ describe('Zoom component tests', () => {
             let callsStartZoomBeforeMouseenter = Zoom.methods.startZoom.callCount
             let e = document.createEvent('HTMLEvents')
             e.initEvent('mouseenter', true, true)
+            e.pageX = 50
+            e.pageY = 100
             cmp.$el.dispatchEvent(e)
             it('check run startZoom method on mouseenter', (done) => {
               cmp.$nextTick(() => {
                 expect(Zoom.methods.startZoom.callCount).is.equal(callsStartZoomBeforeMouseenter + 1)
                 done()
               })
+            })
+            it('check X cursor position is right', () => {
+              expect(cmp.cursor.x).is.equal(35)
+            })
+            it('check Y cursor position is right', () => {
+              expect(cmp.cursor.y).is.equal(85)
             })
           })
         })

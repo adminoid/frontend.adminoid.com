@@ -337,7 +337,7 @@
               <div class="right floated meta yellow"><i class="calendar icon"></i>2015</div>
             </div>
 
-            <zoom image=".zoom" start="10|20" inline-template>
+            <zoom inline-template>
               <div class="content window fix" id="ikmed-prices"
                    @mouseenter="startZoom" @touchstart="startZoom"
                    @mousemove="onZoom" @touchmove="onZoom"
@@ -347,6 +347,7 @@
                      alt="">
                 <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
                      alt="">
+                <span class="debugger">@{{ cursor.x }} / @{{ cursor.y }}</span>
               </div>
             </zoom>
             <div class="extra content">
