@@ -14,9 +14,12 @@ describe("Тест", function() {
 
 })
 ```
-
+**По событиям:** <https://learn.javascript.ru/dispatch-events>
 
 ---
+
+Запуск тестов в кастомном браузере:
+```//    "unit-watch": "karma start test/unit/karma.conf.js  --browsers PhantomJS_custom",```
 
 ## Sinon.spy()
 Что бы он нормально работал, надо назначать шпиона на модуль до реализации

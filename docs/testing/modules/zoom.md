@@ -38,3 +38,20 @@ $(document).trigger(e);
     ((e.pageX - this.offset.left)/this.width)*100
     ((e.pageY - this.offset.top)/this.height)*100
     ```
+
+---
+
+## What is going on mouse events?
+
+### When load script
+set up start left and top css props 
+startLeft and startTop get from params and if it is not exist get its from css
+
+### When startZoom and onZoom
+change left and top positions of image
+
+### When stopZoom
+return positions to start left and top values
+
+realLeftPosition = normalLeftPosition - (left + padding) 
+realTopPosition = normalTopPosition - (left + padding) 
