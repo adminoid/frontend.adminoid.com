@@ -5,6 +5,14 @@
       image: {
         type: String,
         default: '.zoom'
+      },
+      startLeft: {
+        type: Number,
+        default: 0
+      },
+      startTop: {
+        type: Number,
+        default: 0
       }
     },
     data: function () {
@@ -15,9 +23,9 @@
           imageWidth: 0,
           imageHeight: 0,
           widthProportion: 1,
-          heightProportion: 1
-//          startLeftOffset: 0,
-//          startTopOffset: 0
+          heightProportion: 1,
+          startLeft: this.startLeft,
+          startTop: this.startTop
         },
         selectors: {
           image: this.image
@@ -57,18 +65,6 @@
         this.initialData.heightProportion = this.initialData.imageHeight / this.initialData.wrapperHeight
         this.initialData.scale = (this.initialData.widthProportion >= this.initialData.heightProportion) ? this.initialData.widthProportion : this.initialData.heightProportion
         this.padding = (this.$wrapper.innerHeight() - this.$wrapper.height()) / 2
-//        let leftAbs = parseInt(this.$image.css('left'), 10)
-//        if (leftAbs) {
-//          this.initialData.startLeftOffset = leftAbs - this.padding
-//        } else if (this.padding > 0) {
-//          this.initialData.startLeftOffset = -this.padding
-//        }
-//        let topAbs = parseInt(this.$image.css('top'), 10)
-//        if (topAbs) {
-//          this.initialData.startTopOffset = topAbs - this.padding
-//        } else if (this.padding > 0) {
-//          this.initialData.startTopOffset = -this.padding
-//        }
       },
       startZoom: function (e) {
         this.calculateCursorPosition(e)
@@ -81,27 +77,22 @@
       calculateCursorPosition: function (e) {
         let xPos = e.pageX - this.$wrapper.offset().left - this.padding
         let yPos = e.pageY - this.$wrapper.offset().top - this.padding
-        this.cursor.x = Math.round(xPos)
-        this.cursor.y = Math.round(yPos)
+//        let cursorOnWidthPercent = parseInt(xPos / (this.initialData.wrapperWidth / 100), 10)
+//        let cursorOnHeightPercent = parseInt(yPos / (this.initialData.wrapperHeight / 100), 10)
+//        this.cursor.widthAdditionalChunk = parseInt(((this.initialData.imageWidth / 100) * cursorOnWidthPercent) / 2, 10)
+//        this.cursor.heightAdditionalChunk = parseInt(((this.initialData.imageHeight / 100) * cursorOnHeightPercent) / 2, 10)
+        this.cursor.x = parseInt(xPos, 10)
+        this.cursor.y = parseInt(yPos, 10)
+      }
+    },
+    computed: {
+      left: function () {
+        return -parseInt(this.cursor.x * (this.initialData.widthProportion), 10)
       },
-      calculateStartOffsets: function () {
-//        this.cursor.startLeftOffset
+      top: function () {
+        return -parseInt(this.cursor.y * (this.initialData.heightProportion), 10)
       }
     }
-//    ,watch: {
-//      'initialData.startLeftOffset': function (newVal, oldVal) {
-//        console.info(oldVal)
-//        console.log(newVal)
-//      }
-//    }
-//    computed: {
-//      widthProportion: function () {
-//        return (this.initialData.imageWidth / this.initialData.wrapperWidth)
-//      },
-//      heightProportion: function () {
-//        return (this.initialData.imageHeight / this.initialData.wrapperHeight)
-//      }
-//    }
   }
 </script>
 <template>
@@ -112,7 +103,7 @@
     <img class="chrome zoom"
          src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg"
          alt=""
-         style="left:-300px;top:-200px">
+         :style="{ left: left + 'px', top: top + 'px' }">
     <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
          alt="">
     <span class="debugger">{{ cursor.x }} / {{ cursor.y }}</span>

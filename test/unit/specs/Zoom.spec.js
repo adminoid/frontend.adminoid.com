@@ -27,7 +27,7 @@ const padding = 15
  * @param useOffset
  * @returns {'Zoom component'}
  */
-const setSizesForComponent = (vueWrapper, useOffset = false) => {
+const setSizesForComponent = (vueWrapper) => {
   vueWrapper.$mount()
   var cmp = vueWrapper.$refs.component
   var $elWrapper = $(cmp.$el)
@@ -37,9 +37,9 @@ const setSizesForComponent = (vueWrapper, useOffset = false) => {
   $elWrapper.css({padding: padding})
   $elImage.width(startImageWidth)
   $elImage.height(startImageHeight)
-  if (useOffset) {
-    $elImage.css({left: '-300px', top: '-200px'})
-  }
+  // if (useOffset) {
+  //   $elImage.css({left: '-300px', top: '-200px'})
+  // }
   cmp.calculateSizesAndProportions()
   return cmp
 }
@@ -69,6 +69,18 @@ describe('tests for Zoom component', () => {
       let callsBeforeResize = Zoom.methods.calculateSizesAndProportions.callCount
       $(window).trigger('resize')
       expect(Zoom.methods.calculateSizesAndProportions.callCount).is.equal(callsBeforeResize + 1)
+    })
+  })
+  describe('tests for makeStartUpData method', () => {
+    const vueWrapper = makeWrapper()
+    var cmp = setSizesForComponent(vueWrapper)
+    describe('jquery objects', () => {
+      it('check $wrapper', () => {
+        expect(cmp.$wrapper).is.a('object')
+      })
+      it('check $image', () => {
+        expect(cmp.$image).is.a('object')
+      })
     })
   })
   describe('tests for calculateSizesAndProportions method', () => {

@@ -337,7 +337,7 @@
               <div class="right floated meta yellow"><i class="calendar icon"></i>2015</div>
             </div>
 
-            <zoom inline-template>
+            <zoom startLeft="-300" startTop="-200" inline-template>
               <div class="content window fix" id="ikmed-prices"
                    @mouseenter="startZoom" @touchstart="startZoom"
                    @mousemove="onZoom" @touchmove="onZoom"
@@ -345,7 +345,7 @@
                 <img class="chrome zoom"
                      src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg"
                      alt=""
-                     style="left:-300px;top:-200px">
+                     :style="{ left: left + 'px', top: top + 'px' }">
                 <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
                      alt="">
                 <span class="debugger">{{ cursor.x }} / {{ cursor.y }}</span>
