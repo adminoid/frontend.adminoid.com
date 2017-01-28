@@ -104,10 +104,10 @@ describe('tests for Zoom component', () => {
     })
     describe('proportions', () => {
       it('check width proportion (how many times image width more than wrapper width)', () => {
-        expect(cmp.initialData.widthProportion).is.equal(cmp.initialData.imageWidth / cmp.initialData.wrapperWidth)
+        expect(cmp.initialData.widthProportion).is.equal(cmp.initialData.imageWidth / cmp.initialData.wrapperWidth - 1)
       })
       it('check height proportion (how many times image height more than wrapper height)', () => {
-        expect(cmp.initialData.heightProportion).is.equal(cmp.initialData.imageHeight / cmp.initialData.wrapperHeight)
+        expect(cmp.initialData.heightProportion).is.equal(cmp.initialData.imageHeight / cmp.initialData.wrapperHeight - 1)
       })
     })
     it('scale in calculateSizesAndProportions', () => {
@@ -161,6 +161,14 @@ describe('tests for Zoom component', () => {
         })
         it('onZoom check Y cursor position is right', () => {
           expect(cmp.cursor.y).is.equal(235)
+        })
+        describe('left and top computed props', () => {
+          it('left', () => {
+            expect(cmp.left).is.equal(-74)
+          })
+          it('top', () => {
+            expect(cmp.top).is.equal(-536)
+          })
         })
       })
       describe('stopZoom method (run on mouseleave)', () => {

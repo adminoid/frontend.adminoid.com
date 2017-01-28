@@ -61,8 +61,8 @@
         this.initialData.wrapperHeight = this.$wrapper.height()
         this.initialData.imageWidth = this.$image.width()
         this.initialData.imageHeight = this.$image.height()
-        this.initialData.widthProportion = this.initialData.imageWidth / this.initialData.wrapperWidth
-        this.initialData.heightProportion = this.initialData.imageHeight / this.initialData.wrapperHeight
+        this.initialData.widthProportion = this.initialData.imageWidth / this.initialData.wrapperWidth - 1
+        this.initialData.heightProportion = this.initialData.imageHeight / this.initialData.wrapperHeight - 1
         this.initialData.scale = (this.initialData.widthProportion >= this.initialData.heightProportion) ? this.initialData.widthProportion : this.initialData.heightProportion
         this.padding = (this.$wrapper.innerHeight() - this.$wrapper.height()) / 2
       },
@@ -77,10 +77,6 @@
       calculateCursorPosition: function (e) {
         let xPos = e.pageX - this.$wrapper.offset().left - this.padding
         let yPos = e.pageY - this.$wrapper.offset().top - this.padding
-//        let cursorOnWidthPercent = parseInt(xPos / (this.initialData.wrapperWidth / 100), 10)
-//        let cursorOnHeightPercent = parseInt(yPos / (this.initialData.wrapperHeight / 100), 10)
-//        this.cursor.widthAdditionalChunk = parseInt(((this.initialData.imageWidth / 100) * cursorOnWidthPercent) / 2, 10)
-//        this.cursor.heightAdditionalChunk = parseInt(((this.initialData.imageHeight / 100) * cursorOnHeightPercent) / 2, 10)
         this.cursor.x = parseInt(xPos, 10)
         this.cursor.y = parseInt(yPos, 10)
       }
@@ -106,14 +102,9 @@
          :style="{ left: left + 'px', top: top + 'px' }">
     <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
          alt="">
-    <span class="debugger">{{ cursor.x }} / {{ cursor.y }}</span>
   </div>
 </template>
 <style>
-  .debugger {
-    position: absolute;
-    top: -4px;
-  }
   .content.window.fix {
     position: relative;
     overflow: hidden;
