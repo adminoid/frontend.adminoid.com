@@ -270,13 +270,13 @@
 @brownHeaderColor: darken(@brownTextColor, 5);
 
 /*--- Colored Text ---*/
-@redTextColor: #A1262A;
+@redTextColor: #A01425;
 @orangeTextColor: @orange;
-@yellowTextColor: #B58105; // Yellow text is difficult to read
+@yellowTextColor: #BA6704; // Yellow text is difficult to read
 @oliveTextColor: #8ABC1E; // Olive is difficult to read
-@greenTextColor: #1EBC30; // Green is difficult to read
+@greenTextColor: #2B630E; // Green is difficult to read
 @tealTextColor: #10A3A3; // Teal text is difficult to read
-@blueTextColor: #1254B0;
+@blueTextColor: #104795;
 @violetTextColor: @violet;
 @purpleTextColor: @purple;
 @pinkTextColor: @pink;
