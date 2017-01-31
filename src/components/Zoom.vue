@@ -40,16 +40,14 @@
       }
     },
     created: function () {
-//      window.addEventListener('resize', this.calculateSizesAndProportions)
-      window.onresize = this.calculateSizesAndProportions
+      window.addEventListener('resize', this.calculateSizesAndProportions)
     },
     mounted: function () {
       this.makeStartUpData()
       this.calculateSizesAndProportions()
     },
     beforeDestroy: function () {
-//      window.removeEventListener('resize', this.calculateSizesAndProportions)
-      window.onresize = null
+      window.removeEventListener('resize', this.calculateSizesAndProportions)
     },
     methods: {
       makeStartUpData: function () {

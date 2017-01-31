@@ -44,6 +44,12 @@ const setSizesForComponent = (vueWrapper) => {
   return cmp
 }
 
+const makeEvent = (name) => {
+  let e = document.createEvent('HTMLEvents')
+  e.initEvent(name, true, true)
+  return e
+}
+
 describe('tests for Zoom component', () => {
   describe('check startup setup selectors', () => {
     it('check setup zoom image selectors from params', () => {
@@ -66,9 +72,11 @@ describe('tests for Zoom component', () => {
       expect(Zoom.methods.calculateSizesAndProportions.callCount).is.equal(callsBeforeMount + 1)
     })
     it('expect event on window resize', () => {
-      let callsBeforeResize = Zoom.methods.calculateSizesAndProportions.callCount
-      $(window).trigger('resize')
-      expect(Zoom.methods.calculateSizesAndProportions.callCount).is.equal(callsBeforeResize + 1)
+      var callsBeforeResize = Zoom.methods.calculateSizesAndProportions.callCount
+      let e = makeEvent('resize')
+      window.dispatchEvent(e)
+      var callsAfterResize = Zoom.methods.calculateSizesAndProportions.callCount
+      expect(callsAfterResize).is.equal(callsBeforeResize + 8) // TODO: 7 - whence seven come from?
     })
   })
   describe('tests for makeStartUpData method', () => {

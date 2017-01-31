@@ -18,6 +18,10 @@ switch (pageName) {
     let Zoom = require('./components/Zoom')
     components = {Styles, TopMenu, Zoom}
     break
+  case 'process':
+    let HalfRotate = require('./components/HalfRotate')
+    components = {Styles, TopMenu, HalfRotate}
+    break
   default:
     components = {Styles, TopMenu}
 }
