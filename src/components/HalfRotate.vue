@@ -1,16 +1,26 @@
 <script>
   import $ from 'jquery'
+  const framePaddingAndBorder = 40 // 40 it is a padding and border
+  const heightAngleLimit = 10
+  const widthAngleLimit = 5
   export default {
     data: function () {
       return {
         initData: {
           width: 0,
-          height: 0
+          height: 0,
+          leftOffset: 0,
+          topOffset: 0
         },
         cursor: {
           x: 0,
           y: 0
-        }
+        },
+        angles: {
+          vertical: 0,
+          horizontal: 0
+        },
+        $block: {}
       }
     },
     created: function () {
@@ -25,27 +35,53 @@
     methods: {
       makeInitData: function () {
         let $el = $(this.$el)
-        this.initData.width = $el.width()
-        this.initData.height = $el.height()
+        this.$block = $el
+        this.initData.leftOffset = $el.offset().left
+        this.initData.topOffset = $el.offset().top
+        this.initData.width = $el.width() + framePaddingAndBorder
+        this.initData.height = $el.height() + framePaddingAndBorder
       },
       onHover: function (e) {
         this.cursor.x = e.pageX
         this.cursor.y = e.pageY
-        console.info(this.widthPercent)
       }
     },
     computed: {
-      widthPercent: function () {
-        return this.cursor.x / (this.initData.width / 100)
+      widthAngle: function () {
+        let percent = parseInt(Math.round((this.cursor.x - this.initData.leftOffset) / (this.initData.width / 100)), 10)
+        let factor = (percent / 100)
+        var angle
+        if (percent > 0 && percent <= 50) {
+          let angleFactor = 1 - factor * 2
+          angle = -(widthAngleLimit * angleFactor)
+        } else if (percent > 50 && percent <= 100) {
+          let angleFactor = (factor - 0.5) * 2
+          angle = widthAngleLimit * angleFactor
+        }
+        return -angle || 0
+      },
+      heightAngle: function () {
+        let percent = parseInt(Math.round((this.cursor.y - this.initData.topOffset) / (this.initData.height / 100)), 10)
+        let factor = (percent / 100)
+        var angle
+        if (percent > 0 && percent <= 50) {
+          let angleFactor = 1 - factor * 2
+          angle = -(heightAngleLimit * angleFactor)
+        } else if (percent > 50 && percent <= 100) {
+          let angleFactor = (factor - 0.5) * 2
+          angle = heightAngleLimit * angleFactor
+        }
+        return angle || 0
       }
     }
   }
 </script>
 <template>
-  <div class="sixteen wide column message" @mousemove="onHover">
+  <div class="sixteen wide column message"
+       @mousemove="onHover"
+       :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
     <h2>Проектирование</h2>
     <p>
-      {{ widthPercent }} <br>
       Фундаментом любого проекта является проектирование. Прежде чем что-то делать нужно понять что именно.
       И уже после того, как стало ясно что делать, можно думать над тем как именно делать. И только потом можно
       начинать подсчитывать примерные сроки и цену. Если вам кто-то сказал цену или срок на проект без
@@ -57,4 +93,8 @@
     </p>
   </div>
 </template>
-<style></style>
+<style>
+  .sixteen.message {
+    transition: all 1ms ease-out 0s;
+  }
+</style>

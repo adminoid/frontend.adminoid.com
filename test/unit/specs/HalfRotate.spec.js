@@ -37,14 +37,14 @@ describe('Tests for HalfRotate component', () => {
       let wrapper = makeWrapper()
       let cmp = setStartSizes(wrapper)
       it('check width', () => {
-        expect(cmp.initData.width).is.equal(1083)
+        expect(cmp.initData.width).is.equal(1123)
       })
       it('check height', () => {
-        expect(cmp.initData.height).is.equal(195)
+        expect(cmp.initData.height).is.equal(235)
       })
     })
     describe('run makeInitData on window resize', () => {
-      it('test', () => {
+      it('run makeInitData on window resize', () => {
         var callsBefore = HalfRotate.methods.makeInitData.callCount
         let e = makeEvent('resize')
         window.dispatchEvent(e)
@@ -59,16 +59,21 @@ describe('Tests for HalfRotate component', () => {
       let cmp = setStartSizes(wrapper)
       let e = makeEvent('mousemove')
       e.pageX = 150
-      e.pageY = 250
+      e.pageY = 50
       cmp.$el.dispatchEvent(e)
       it('check X cursor position', () => {
         expect(cmp.cursor.x).is.equal(150)
       })
       it('check Y cursor position', () => {
-        expect(cmp.cursor.y).is.equal(250)
+        expect(cmp.cursor.y).is.equal(50)
       })
-      it('width percent', () => {
-        expect(cmp.widthPercent).is.equal(777)
+      describe('angle factors', () => {
+        it('width angle', () => {
+          expect(cmp.widthAngle).is.equal(3.7)
+        })
+        it('height angle', () => {
+          expect(cmp.heightAngle).is.equal(-5.800000000000001)
+        })
       })
     })
   })
