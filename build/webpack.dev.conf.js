@@ -21,12 +21,12 @@ module.exports = merge(baseWebpackConfig, {
       'process.env': config.dev.env
     }),
     // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"portfolio", /* filename= */"portfolio.js"),
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jquery: 'jquery',
-    //   'window.jQuery': 'jquery',
-    //   jQuery: 'jquery'
-    // }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

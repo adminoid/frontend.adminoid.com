@@ -28,16 +28,16 @@
 </head>
 <body>
 
-<div id="app">
+<div class="ui right sidebar inverted red vertical menu active" id="top-menu-sidebar">
+  <a href="/" class="item">Главная</a>
+  <a href="/process.html" class="item">Процесс</a>
+  <a href="/price.html" class="item active">Цена</a>
+  <a href="/portfolio.html" class="item">Портфолио</a>
+  <a href="/tools.html" class="item">Инструменты</a>
+</div>
 
-  <div class="ui right sidebar inverted red vertical menu active" id="top-menu-sidebar">
-    <a href="/" class="item">Главная</a>
-    <a href="/process.html" class="item">Процесс</a>
-    <a href="/price.html" class="item active">Цена</a>
-    <a href="/portfolio.html" class="item">Портфолио</a>
-    <a href="/tools.html" class="item">Инструменты</a>
-  </div>
-  <div class="pusher page-content">
+<div id="app" class="pusher ">
+  <div class="page-content">
 
     <top-menu inline-template>
       <div class="ui fixed menu" id="top-menu">
@@ -130,7 +130,7 @@
                                   d="M12,14 L11.7619048,14 L0,52 L26,52 L14.2380952,14 L14,14 C14,13.4477153 13.5522847,13 13,13 C12.4477153,13 12,13.4477153 12,14 Z"
                                   id="Combined-Shape" fill="#CD2E41"></path>
                               <g id="eye-pupil"
-                                 transform="translate(13.000000, 36.000000) rotate(40.000000) translate(-13.000000, -36.000000) translate(8.000000, 31.000000)">
+                                 :transform="eyeTransformWithAngle">
                                 <path
                                     d="M5,10 C7.76142375,10 10,7.76142375 10,5 C10,2.23857625 7.76142375,0 5,0 C2.23857625,0 0,2.23857625 0,5 C0,7.76142375 2.23857625,10 5,10 Z"
                                     id="eye" fill="#FFFFFF"></path>
@@ -158,9 +158,9 @@
           </div>
           <div class="right floated right aligned column mobile tablet only" id="micro-menu-wr">
             <div class=" item">
-
               <svg id="micro-menu-svg" width="46px"
                    height="36px" viewBox="0 0 46 36" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                   @click="toggleSidebar"
                    xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Mobile-menu</title>
                 <desc>Created with Sketch.</desc>
@@ -204,7 +204,7 @@
           <div class="twelve wide column computer widescreen largescreen only">
             <div class="ui five item menu">
               <a href="/" class="item">
-                Главная
+                Главная {{ eyeAngle }} inline
               </a>
               <a href="/process.html" class="item">
                 Процесс
@@ -224,7 +224,6 @@
       </div>
     </top-menu>
 
-    <!--</top-menu>-->
     <div class="ui page container" id="price">
 
       <h1 class="ui blue header">Выгодная цена за фильтрованный концентрат</h1>
@@ -716,36 +715,34 @@
       </div>
     </div>
   </div>
-
-  <div class="page-footer pusher">
-    <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-        <div class="ui middle aligned four column grid">
-          <div class="five wide column">
-            <div class="ui middle aligned container">
-              <img src="/static/img/temp/yandex-metrika.png" alt="">
-            </div>
+</div>
+<div class="page-footer pusher">
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui middle aligned four column grid">
+        <div class="five wide column">
+          <div class="ui middle aligned container">
+            <img src="/static/img/temp/yandex-metrika.png" alt="">
           </div>
-          <div class="two wide column">
-            <div class="ui inverted link list">
-              <a href="#" class="item">Процесс</a>
-              <a href="#" class="item">Цена</a>
-            </div>
+        </div>
+        <div class="two wide column">
+          <div class="ui inverted link list">
+            <a href="#" class="item">Процесс</a>
+            <a href="#" class="item">Цена</a>
           </div>
-          <div class="two wide column">
-            <div class="ui inverted link list">
-              <a href="#" class="item">Портфолио</a>
-              <a href="#" class="item">Инструменты</a>
-            </div>
+        </div>
+        <div class="two wide column">
+          <div class="ui inverted link list">
+            <a href="#" class="item">Портфолио</a>
+            <a href="#" class="item">Инструменты</a>
           </div>
-          <div class="seven wide column right aligned">
-            <img src="/static/img/adminoid/footer/footer-logo.svg" alt="">
-          </div>
+        </div>
+        <div class="seven wide column right aligned">
+          <img src="/static/img/adminoid/footer/footer-logo.svg" alt="">
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
 <!-- JavaScripts -->

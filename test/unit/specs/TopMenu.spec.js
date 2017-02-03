@@ -1,7 +1,37 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
 // import {TweenMax, TimelineLite} from 'gsap'
-// import $ from 'jquery'
+import $ from 'jquery'
+
+const makeEvent = (name) => {
+  let e = document.createEvent('HTMLEvents')
+  e.initEvent(name, true, true)
+  return e
+}
+
+const makeWrapper = (wrapperTemplate = '<div id="wrapper"><top-menu ref="component"></top-menu></div>') => {
+  return new Vue({
+    template: wrapperTemplate,
+    components: {TopMenu}
+  })
+}
+
+const wrWidth = 1200
+const wrHeight = 1000
+const cmpWidth = 1200
+const cmpHeight = 70
+
+const setStartSizes = (vueWrapper) => {
+  vueWrapper.$mount()
+  let $wr = $(vueWrapper.$el)
+  $wr.width(wrWidth)
+  $wr.height(wrHeight)
+  let cmp = vueWrapper.$refs.component
+  let $cmp = $(cmp.$el)
+  $cmp.width(cmpWidth)
+  $cmp.height(cmpHeight)
+  return cmp
+}
 
 describe('tests for component TopMenu', () => {
   describe('animation logo', () => {
@@ -47,6 +77,24 @@ describe('tests for component TopMenu', () => {
         vmTopMenu.$nextTick(function () {
           expect(TopMenu.methods.runLogoAnimation.getCall(1).args[0]).to.equal('backward')
           done()
+        })
+      })
+    })
+  })
+  describe('eye moves on mouse move', () => {
+    let wrapper = makeWrapper()
+    let cmp = setStartSizes(wrapper)
+    describe('check mouse move event handler', () => {
+      describe('cursor position must change on mousemove', () => {
+        var e = makeEvent('mousemove')
+        e.pageX = 250
+        e.pageY = 300
+        window.dispatchEvent(e)
+        it('x position', () => {
+          expect(cmp.cursor.x).is.equal(250)
+        })
+        it('y position', () => {
+          expect(cmp.cursor.y).is.equal(300)
         })
       })
     })

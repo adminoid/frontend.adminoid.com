@@ -32,12 +32,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"portfolio", /* filename= */"portfolio.js"),
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jquery: 'jquery',
-    //   'window.jQuery': 'jquery',
-    //   jQuery: 'jquery'
-    // }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

@@ -10,6 +10,10 @@
         settings: {
           topOffsetForToggleAnimation: 300
         },
+        cursor: {
+          x: 0,
+          y: 0
+        },
         selectors: {
           gsap: {
             svgLogo: '#header-logo-svg',
@@ -29,8 +33,12 @@
             // flicker
             rectangleCenterColor: '#Rectangle-Green',
             rectanglesBorderColor: '.Rectangle-Red'
-          }
-        }
+          },
+          eye: '#eye-pupil'
+        },
+        reduced: false,
+        $eye: {},
+        eyeTransformWithAngle: 'translate(13.000000, 36.000000) rotate(40.000000) translate(-13.000000, -36.000000) translate(8.000000, 31.000000)'
       }
     },
     mounted () {
@@ -38,12 +46,19 @@
       this.initFlicker()
       this.timeline = this.compileTimeline()
       this.timeline.reverse(1)
+      this.$eye = $(this.selectors.eye)
     },
     created: function () {
       window.addEventListener('scroll', this.checkTopOffset)
+      window.addEventListener('mousemove', this.eyeMove)
+      var jQuery = $
+      jQuery(function () {
+        require('../../semantic/dist/components/sidebar.min.js')
+      })
     },
     beforeDestroy: function () {
       window.removeEventListener('scroll', this.checkTopOffset)
+      window.removeEventListener('mousemove', this.eyeMove)
     },
     watch: {
       topOffset: function (val, oldVal) {
@@ -55,6 +70,22 @@
       }
     },
     methods: {
+      eyeMove: function (e) {
+        if (!this.reduced) return false
+        this.cursor.x = e.pageX
+        this.cursor.y = e.pageY
+
+        let eyeCenter = [this.$eye.offset().left + this.$eye.width() / 2, this.$eye.offset().top + this.$eye.height() / 2]
+        let eyeAngle = Math.atan2(e.pageX - eyeCenter[0], -(e.pageY - eyeCenter[1])) * (180 / Math.PI) - 90
+        this.eyeTransformWithAngle = 'translate(13.000000, 36.000000) rotate(' + eyeAngle + ') translate(-13.000000, -36.000000) translate(8.000000, 31.000000)'
+      },
+      toggleSidebar: function () {
+        $('#top-menu-sidebar')
+        .sidebar({
+          transition: 'overlay'
+        })
+        .sidebar('toggle')
+      },
       initFlicker: function () {
         var step = 1
         TweenMax.to(this.selectors.gsap.rectangleCenterColor, step, {
@@ -93,8 +124,10 @@
       },
       runLogoAnimation: function (direction = 'forward') {
         if (direction === 'forward') {
+          this.reduced = true
           this.timeline.play()
         } else if (direction === 'backward') {
+          this.reduced = false
           this.timeline.reverse(0)
         }
       },
@@ -332,9 +365,9 @@
       </div>
       <div class="right floated right aligned column mobile tablet only" id="micro-menu-wr">
         <div class=" item">
-
           <svg id="micro-menu-svg" width="46px"
                height="36px" viewBox="0 0 46 36" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               @click="toggleSidebar"
                xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Mobile-menu</title>
             <desc>Created with Sketch.</desc>
@@ -378,7 +411,7 @@
       <div class="twelve wide column computer widescreen largescreen only">
         <div class="ui five item menu">
           <a href="/" class="item">
-            Главная
+            Главная (tpl)
           </a>
           <a href="/process.html" class="item">
             Процесс
