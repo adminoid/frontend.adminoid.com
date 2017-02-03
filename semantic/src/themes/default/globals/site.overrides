@@ -57,107 +57,7 @@ body#app {
 /* Pages (Petja's custom) */
 @import "../pages/index";
 
-//@import "../pages/process";
-.page#process {
-  .process-block {
-    /*******- begin -*/
-    position: relative;
-    z-index: 1;
-    perspective: 1000px;
-    //&:nth-child(even) {
-    //  .message {
-    //    margin-left: 20%;
-    //    transform-origin: 40% 50%;
-    //  }
-    //}
-    .message {
-      //padding-top: 0 !important;
-      //transform-origin: 64% 50%;
-      transform-style: preserve-3d;
-      -webkit-transition: all 150ms ease-out;
-      -moz-transition: all 150ms ease-out;
-      -o-transition: all 150ms ease-out;
-      transition: all 150ms ease-out;
-      /*******- end -*/
-      //font-family: @codeFont;
-      font-family: @pageFont;
-      margin: 1.3em 1em;
-      background: #fff;
-    }
-    //&:hover .message {
-    //  transform: rotateY(180deg);
-    //}
-    //&:first-child{
-    &.top {
-      margin-top: 3em;
-      .inner-column {
-        border-radius: 1em 1em 0 0;
-      }
-    }
-    &.bottom {
-      .inner-column {
-        border-radius: 0 0 1em 1em;
-      }
-    }
-    .inner-column {
-      width: 2em;
-      height: 100%;
-      position: absolute;
-      right: 50%;
-      margin-right: -1em;
-    }
-    // TODO Перенести цвета в конфиг
-    &.projecting > .inner-column {
-      background-color: @red;
-    }
-    &.projecting .message {
-      border: 5px solid @red;
-      border-radius: 7px;
-      color: @blueTextColor;
-    }
-    &.design > .inner-column {
-      background-color: @yellow;
-    }
-    &.design .message {
-      border: 5px solid @yellow;
-      border-radius: 7px;
-      color: @redTextColor;
-    }
-    &.backend > .inner-column {
-      background-color: @blue;
-    }
-    &.backend .message {
-      border: 5px solid @blue;
-      border-radius: 7px;
-      color: @yellowTextColor;
-    }
-    &.layout > .inner-column {
-      background-color: @green;
-    }
-    &.layout .message {
-      border: 5px solid @green;
-      border-radius: 7px;
-      color: @blueTextColor;
-    }
-    &.frontend > .inner-column {
-      background-color: @red;
-    }
-    &.frontend .message {
-      border: 5px solid @red;
-      border-radius: 7px;
-      color: @greenTextColor;
-    }
-
-    &.server > .inner-column {
-      background-color: @yellow;
-    }
-    &.server .message {
-      border: 5px solid @yellow;
-      border-radius: 7px;
-      color: @redTextColor;
-    }
-  }
-}
+@import "../pages/process";
 
 @import "../pages/portfolio";
 
@@ -166,44 +66,140 @@ body#app {
 //@import "../pages/tools";
 
 #tools {
-  .ui.tabular.secondary.menu {
-    font-family: @codeFont;
-    margin-left: 0.1em;
-    &.left-padded {
-      margin-left: 6.79em;
+  .block{
+    border: 2px dashed #FF981C;
+    &:hover{
+      border: 2px solid #418B1B;
     }
-    .item {
-      color: @red;
-      cursor: pointer;
-      margin: 0 0.33333333em 0 0;
-      padding: 0.8em 0.93333333em 0.8em 0;
-      &.active {
-        background: none;
-        color: @blue;
-        font-weight: normal;
-        margin-bottom: 0;
+    .images-wrapper{
+      min-width: 325px;
+      min-height: 170px;
+      position: relative;
+      img{
+        position: absolute;
       }
     }
-  }
-  .ui.tab {
-    margin-right: -0.33333333em;
-    .grid {
-      .column {
-        //height: 300px;
-        text-align: center;
-        font: 0/0 a;
-        img {
-          //vertical-align: middle;
-          //margin: auto;
-          display: inline-block;
-          vertical-align: middle; /* vertical alignment of the inline element */
-          //font: 16px/1 Arial sans-serif;
+    &#projecting{
+      .images-wrapper{
+        img#lucidchart{
+          top: 29px;
+          left: 15px;
         }
-        &:before {
-          content: ' ';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%;
+        img#brain{
+          top: 84px;
+          left: 253px;
+        }
+      }
+    }
+    &#design {
+      .images-wrapper {
+        img#sketch {
+          top: 16px;
+          left: 44px;
+        }
+        img#photoshop {
+          top: 70px;
+          left: 253px;
+        }
+      }
+    }
+    &#backend {
+      .images-wrapper {
+        img#laravel {
+          top: 31px;
+          left: 12px;
+        }
+        img#php {
+          top: 32px;
+          left: 67px;
+        }
+        img#php-storm{
+          left: 190px;
+          top: 14px;
+        }
+        img#git{
+          left: 282px;
+          top: 15px;
+        }
+        img#php-unit {
+          left: 196px;
+          top: 100px;
+        }
+        img#composer{
+          left: 286px;
+          top: 90px;
+        }
+      }
+    }
+    &#frontend {
+      .images-wrapper {
+        img#vue-js {
+          top: 19px;
+          left: 41px;
+        }
+        img#javascript {
+          top: 35px;
+          left: 3px;
+        }
+        img#chai {
+          top: 17px;
+          left: 163px;
+        }
+        img#mocha {
+          top: 17px;
+          left: 212px;
+        }
+        img#karma {
+          top: 70px;
+          left: 183px;
+        }
+        img#webpack {
+          top: 12px;
+          left: 262px;
+        }
+        img#node-js {
+          top: 120px;
+          left: 166px;
+        }
+        img#babel {
+          top: 131px;
+          left: 280px;
+        }
+      }
+    }
+    &#administration {
+      .images-wrapper {
+        img#docker {
+          top: 29px;
+          left: 21px;
+        }
+        img#nginx {
+          top: 17px;
+          left: 187px;
+        }
+        img#ubuntu {
+          top: 16px;
+          left: 283px;
+        }
+        img#apache {
+          top: 115px;
+          left: 184px;
+        }
+        img#debian {
+          top: 83px;
+          left: 284px;
+        }
+      }
+    }
+    &#additional {
+      .images-wrapper {
+        img#google-spreadsheet {
+          top: 24px;
+          left: 41px;
+        }
+        img#ext-js {
+          top: 103px;
+          left: 42px;
         }
       }
     }
