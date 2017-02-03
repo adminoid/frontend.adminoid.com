@@ -30,6 +30,7 @@ const makeEvent = (name) => {
 
 sinon.spy(HalfRotate.methods, 'makeInitData')
 sinon.spy(HalfRotate.methods, 'onHover')
+sinon.spy(HalfRotate.methods, 'onLeave')
 
 describe('Tests for HalfRotate component', () => {
   describe('on mount and window resize recalculate base props', () => {
@@ -73,6 +74,22 @@ describe('Tests for HalfRotate component', () => {
         })
         it('height angle', () => {
           expect(cmp.heightAngle).is.equal(-5.800000000000001)
+        })
+      })
+      describe('On mouse leave event return rotations to zeroes', () => {
+        let callsBefore = HalfRotate.methods.onLeave.callCount
+        let e = makeEvent('mouseleave')
+        it('onLeave must running', () => {
+          cmp.$el.dispatchEvent(e)
+          expect(HalfRotate.methods.onLeave.callCount).is.equal(callsBefore + 1)
+        })
+        describe('check for zeroes after mouseleave event', () => {
+          it('check x angle for zero', () => {
+            expect(cmp.widthAngle).is.equal(0)
+          })
+          it('check y angle for zero', () => {
+            expect(cmp.heightAngle).is.equal(0)
+          })
         })
       })
     })

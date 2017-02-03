@@ -20,7 +20,8 @@
           vertical: 0,
           horizontal: 0
         },
-        $block: {}
+        $block: {},
+        moved: false
       }
     },
     created: function () {
@@ -42,12 +43,19 @@
         this.initData.height = $el.height() + framePaddingAndBorder
       },
       onHover: function (e) {
+        this.moved = true
         this.cursor.x = e.pageX
         this.cursor.y = e.pageY
+      },
+      onLeave: function () {
+        this.moved = false
+        this.widthAngle = 0
+        this.heightAngle = 0
       }
     },
     computed: {
       widthAngle: function () {
+        if (!this.moved) return 0
         let percent = parseInt(Math.round((this.cursor.x - this.initData.leftOffset) / (this.initData.width / 100)), 10)
         let factor = (percent / 100)
         var angle
@@ -61,6 +69,7 @@
         return -angle || 0
       },
       heightAngle: function () {
+        if (!this.moved) return 0
         let percent = parseInt(Math.round((this.cursor.y - this.initData.topOffset) / (this.initData.height / 100)), 10)
         let factor = (percent / 100)
         var angle
@@ -79,6 +88,7 @@
 <template>
   <div class="sixteen wide column message"
        @mousemove="onHover"
+       @mouseleave="onLeave"
        :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
     <h2>Проектирование</h2>
     <p>
