@@ -203,8 +203,8 @@
         // TopMenu height reduction/increase
         var tlTopMenu = new TimelineLite()
         tlTopMenu.add(TweenMax.staggerFromTo(topMenuItemsForResizing, part1time,
-            {height: '4.66667rem'},
-            {height: '3.66667rem'},
+            {height: '4.66667rem', opacity: 1},
+            {height: '3.66667rem', opacity: 0.93},
             0
         ), part1time)
         // Conclusion

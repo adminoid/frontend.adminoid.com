@@ -138,8 +138,8 @@ body#app {
           left: 41px;
         }
         img#javascript {
-          top: 35px;
-          left: 3px;
+          top: 61px;
+          left: 19px;
         }
         img#chai {
           top: 17px;
