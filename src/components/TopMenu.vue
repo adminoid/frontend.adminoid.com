@@ -46,7 +46,7 @@
       this.initFlicker()
       this.timeline = this.compileTimeline()
       this.timeline.reverse(1)
-      this.$eye = $(this.selectors.eye)
+      this.$eye = $(this.$el).find(this.selectors.eye)
     },
     created: function () {
       window.addEventListener('scroll', this.checkTopOffset)
@@ -319,9 +319,12 @@
                             <g id="stripe" mask="url(#mask-3)">
                               <g transform="translate(-2.000000, 0.000000)">
                                 <rect id="Rectangle-Green" fill="#418B1B" x="1" y="0" width="17" height="20"></rect>
-                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="18" width="21" height="2"></rect>
-                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="14" width="21" height="2"></rect>
-                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="10" width="21" height="2"></rect>
+                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="18" width="21"
+                                      height="2"></rect>
+                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="14" width="21"
+                                      height="2"></rect>
+                                <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="10" width="21"
+                                      height="2"></rect>
                                 <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="6" width="21" height="2"></rect>
                                 <rect class="Rectangle-Red" fill="#CD2E41" x="0" y="2" width="21" height="2"></rect>
                               </g>
@@ -344,7 +347,7 @@
                               d="M12,14 L11.7619048,14 L0,52 L26,52 L14.2380952,14 L14,14 C14,13.4477153 13.5522847,13 13,13 C12.4477153,13 12,13.4477153 12,14 Z"
                               id="Combined-Shape" fill="#CD2E41"></path>
                           <g id="eye-pupil"
-                             transform="translate(13.000000, 36.000000) rotate(40.000000) translate(-13.000000, -36.000000) translate(8.000000, 31.000000)">
+                             :transform="eyeTransformWithAngle">
                             <path
                                 d="M5,10 C7.76142375,10 10,7.76142375 10,5 C10,2.23857625 7.76142375,0 5,0 C2.23857625,0 0,2.23857625 0,5 C0,7.76142375 2.23857625,10 5,10 Z"
                                 id="eye" fill="#FFFFFF"></path>
@@ -354,9 +357,16 @@
                           </g>
                           <circle id="head" fill="#CD2E41" cx="13" cy="5" r="5"></circle>
                         </g>
+
+                        <rect id="foots" x="0" y="49" width="40" height="3" rx="1.5"></rect>
                       </g>
                     </g>
+
                   </g>
+                  <path
+                      d="M19.7825394,27.1658829 C19.7825394,27.1658829 44.8446002,14.907786 67.0243645,14.907786 C80.4760792,14.907786 125.433539,23.5315614 154.553558,27.1658829 C162.189247,28.1188543 163.726226,28.596198 174.584333,28.596198 C185.442439,28.596198 195,27.3653861 195,27.3653861"
+                      id="motion-path" stroke="none" fill="none"></path>
+                  <path d="M71.5,38.5 L20.823062,27.1169031" id="move-path" stroke="none"></path>
                 </g>
               </g>
             </svg>
@@ -411,15 +421,15 @@
       <div class="twelve wide column computer widescreen largescreen only">
         <div class="ui five item menu">
           <a href="/" class="item">
-            Главная (tpl)
+            Главная
           </a>
           <a href="/process.html" class="item">
             Процесс
           </a>
-          <a href="/price.html" class="item">
+          <a href="/price.html" class="item active">
             Цена
           </a>
-          <a href="/portfolio.html" class="item active">
+          <a href="/portfolio.html" class="item">
             Портфолио
           </a>
           <a href="/tools.html" class="item">

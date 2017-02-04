@@ -89,12 +89,17 @@ describe('tests for component TopMenu', () => {
         var e = makeEvent('mousemove')
         e.pageX = 250
         e.pageY = 300
+        cmp.reduced = true
         window.dispatchEvent(e)
         it('x position', () => {
           expect(cmp.cursor.x).is.equal(250)
         })
         it('y position', () => {
           expect(cmp.cursor.y).is.equal(300)
+        })
+        it('check eyeTransformWithAngle prop', () => {
+          // eyeTransformWithAngle
+          expect(cmp.eyeTransformWithAngle).is.equal('translate(13.000000, 36.000000) rotate(50.19442890773482) translate(-13.000000, -36.000000) translate(8.000000, 31.000000)')
         })
       })
     })
