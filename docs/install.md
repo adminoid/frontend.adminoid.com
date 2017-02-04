@@ -122,6 +122,12 @@ In file ```.eslintrc.js```
 +  }
 ```
 
+## If has errors eslint in included files
+add line in file begin:
+```javascript
+/* eslint-disable */
+```
+
 ### Links list
 _About webpack stuff_
 [http://vuejs-templates.github.io/webpack/](http://vuejs-templates.github.io/webpack/)

@@ -447,9 +447,16 @@
                       <g id="clocks" transform="translate(775.000000, 0.000000)">
                         <g id="adminoid/elements/clocks-original">
                           <g id="clock">
-                            <path
-                                d="M80.1186223,80.1854528 L120.257015,10.8293059 C120.257015,10.8293059 109.480067,4.73661314 98.6724808,2.32485223 C87.8648951,-0.0869086815 80.1186223,0.321708293 80.1186223,0.321708293 L80.1186223,80.1854528 Z"
-                                id="Path-7" fill="#CD2E41"></path>
+
+                            <!-- 2π × 40 ≈ 251 -->
+                            <circle id="pie-circle" r="40" cx="-80.1186223" cy="80.1854528"
+                                    fill="none"
+                                    transform="rotate(-90)"
+                                    stroke="#CD2E41"
+                                    stroke-width="80"
+                                    stroke-dasharray="20.9167 251"
+                            ></circle>
+
                             <circle id="clock-circle" stroke="#1254B0" cx="80" cy="80"
                                     r="80"></circle>
                             <g id="labels">
@@ -575,7 +582,7 @@
                               </g>
                             </g>
                             <g id="arrows" transform="translate(74.000000, 2.000000)">
-                              <g id="minute-arrow">
+                              <g id="minute-arrow" transform="rotate(45, 6, 78)">
                                 <use fill="black" fill-opacity="1"
                                      filter="url(#filter-26)"
                                      xlink:href="#path-25"></use>
@@ -586,7 +593,7 @@
                                      xlink:href="#path-25"></use>
                               </g>
                               <g id="hour-arrow"
-                                 transform="translate(21.000000, 52.019238) rotate(30.000000) translate(-21.000000, -52.019238) ">
+                                 transform="rotate(45, 18, 62)">
                                 <use fill="black" fill-opacity="1"
                                      filter="url(#filter-29)"
                                      xlink:href="#path-28"></use>
