@@ -906,6 +906,7 @@ body#app {
 }
 
 .page#portfolio .ui.card .content.window {
+  cursor: move;
   position: relative;
   overflow: hidden;
 }

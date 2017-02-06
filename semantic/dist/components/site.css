@@ -367,6 +367,7 @@ body#app {
   min-height: 241px;
 }
 .page#portfolio .ui.card .content.window {
+  cursor: move;
   position: relative;
   overflow: hidden;
 }
