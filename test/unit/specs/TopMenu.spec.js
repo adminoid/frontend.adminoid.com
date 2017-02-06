@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import TopMenu from 'src/components/TopMenu'
-// import {TweenMax, TimelineLite} from 'gsap'
 import $ from 'jquery'
 
 const makeEvent = (name) => {
@@ -98,7 +97,6 @@ describe('tests for component TopMenu', () => {
           expect(cmp.cursor.y).is.equal(300)
         })
         it('check eyeTransformWithAngle prop', () => {
-          // eyeTransformWithAngle
           expect(cmp.eyeTransformWithAngle).is.equal('translate(13.000000, 36.000000) rotate(50.19442890773482) translate(-13.000000, -36.000000) translate(8.000000, 31.000000)')
         })
       })

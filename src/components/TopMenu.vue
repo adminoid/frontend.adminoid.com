@@ -45,7 +45,7 @@
       this.checkTopOffset()
       this.initFlicker()
       this.timeline = this.compileTimeline()
-      this.timeline.reverse(1)
+      this.timeline.reverse(0)
       this.$eye = $(this.$el).find(this.selectors.eye)
     },
     created: function () {
@@ -125,10 +125,10 @@
       runLogoAnimation: function (direction = 'forward') {
         if (direction === 'forward') {
           this.reduced = true
-          this.timeline.play()
+          this.timeline.pause().play()
         } else if (direction === 'backward') {
           this.reduced = false
-          this.timeline.reverse(0)
+          this.timeline.pause().reverse()
         }
       },
       checkTopOffset: function () {

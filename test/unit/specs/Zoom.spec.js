@@ -24,7 +24,6 @@ const padding = 15
 /**
  * gets vueWrapper and return component from it
  * @param vueWrapper
- * @param useOffset
  * @returns {'Zoom component'}
  */
 const setSizesForComponent = (vueWrapper) => {
@@ -37,9 +36,6 @@ const setSizesForComponent = (vueWrapper) => {
   $elWrapper.css({padding: padding})
   $elImage.width(startImageWidth)
   $elImage.height(startImageHeight)
-  // if (useOffset) {
-  //   $elImage.css({left: '-300px', top: '-200px'})
-  // }
   cmp.calculateSizesAndProportions()
   return cmp
 }

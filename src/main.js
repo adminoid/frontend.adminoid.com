@@ -22,6 +22,10 @@ switch (pageName) {
     let HalfRotate = require('./components/HalfRotate')
     components = {Styles, TopMenu, HalfRotate}
     break
+  case 'price':
+    let Clock = require('./components/Clock')
+    components = {Styles, TopMenu, Clock}
+    break
   default:
     components = {Styles, TopMenu}
 }
