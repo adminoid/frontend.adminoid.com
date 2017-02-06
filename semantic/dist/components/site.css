@@ -1,0 +1,821 @@
+/*!
+ * # Semantic UI 2.2.7 - Site
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+             Page
+*******************************/
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700,400italic,700italic&subset=latin');
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 15px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  min-width: 320px;
+  background: #FFFFFF;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
+  font-smoothing: antialiased;
+}
+
+
+/*******************************
+             Headers
+*******************************/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  line-height: 1.2857em;
+  margin: calc(2rem -  0.14285em ) 0em 1rem;
+  font-weight: normal;
+  padding: 0em;
+}
+h1 {
+  min-height: 1rem;
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.714rem;
+}
+h3 {
+  font-size: 1.28rem;
+}
+h4 {
+  font-size: 1.071rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+  margin-top: 0em;
+}
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+  margin-bottom: 0em;
+}
+
+
+/*******************************
+             Text
+*******************************/
+
+p {
+  margin: 0em 0em 1em;
+  line-height: 1.4285em;
+}
+p:first-child {
+  margin-top: 0em;
+}
+p:last-child {
+  margin-bottom: 0em;
+}
+
+/*-------------------
+        Links
+--------------------*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+a:hover {
+  color: #1e70bf;
+  text-decoration: none;
+}
+
+
+/*******************************
+          Highlighting
+*******************************/
+
+
+/* Site */
+::-webkit-selection {
+  background-color: #CCE2FF;
+  color: rgba(0, 0, 0, 0.87);
+}
+::-moz-selection {
+  background-color: #CCE2FF;
+  color: rgba(0, 0, 0, 0.87);
+}
+::selection {
+  background-color: #CCE2FF;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Form */
+textarea::-webkit-selection,
+input::-webkit-selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
+textarea::-moz-selection,
+input::-moz-selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
+textarea::selection,
+input::selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+
+/*******************************
+        Global Overrides
+*******************************/
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  height: auto !important;
+}
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: #fff;
+}
+body#app {
+  height: auto;
+}
+.ui.page.container {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7rem;
+  padding-bottom: 12rem;
+  height: 100%;
+}
+.page-footer {
+  height: 7.55em;
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+  
+/* Set the fixed height of the footer here */
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.page-footer.pusher {
+  min-height: inherit !important;
+}
+.page-footer a.item {
+  font-size: 1.06667rem;
+}
+.page-footer a.item:hover {
+  text-decoration: underline;
+}
+.page-footer > .ui.footer > .ui.container > .ui.grid {
+  height: 114px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  [class*="mobile hidden"],
+  [class*="tablet only"]:not(.mobile),
+  [class*="computer only"]:not(.mobile),
+  [class*="largescreen only"]:not(.mobile),
+  [class*="widescreen only"]:not(.mobile),
+  [class*="or lower hidden"] {
+    display: none !important;
+  }
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  [class*="mobile only"]:not(.tablet),
+  [class*="tablet hidden"],
+  [class*="computer only"]:not(.tablet),
+  [class*="largescreen only"]:not(.tablet),
+  [class*="widescreen only"]:not(.tablet),
+  [class*="or lower hidden"]:not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  [class*="mobile only"]:not(.computer),
+  [class*="tablet only"]:not(.computer),
+  [class*="computer hidden"],
+  [class*="largescreen only"]:not(.computer),
+  [class*="widescreen only"]:not(.computer),
+  [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  [class*="mobile only"]:not([class*="largescreen"]),
+  [class*="tablet only"]:not([class*="largescreen"]),
+  [class*="computer only"]:not([class*="largescreen"]),
+  [class*="largescreen hidden"],
+  [class*="widescreen only"]:not([class*="largescreen"]),
+  [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+  [class*="mobile only"]:not([class*="widescreen"]),
+  [class*="tablet only"]:not([class*="widescreen"]),
+  [class*="computer only"]:not([class*="widescreen"]),
+  [class*="largescreen only"]:not([class*="widescreen"]),
+  [class*="widescreen hidden"],
+  [class*="widescreen or lower hidden"] {
+    display: none !important;
+  }
+}
+
+/* Pages (Petja's custom) */
+.page#index #intro {
+  font-family: 'Roboto Mono', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.page#index .sub-label {
+  font-size: 16px;
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #A01425;
+}
+.page#process .process-block {
+  
+
+/*******- begin -*/
+
+  position: relative;
+  z-index: 1;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.page#process .process-block .message {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  
+
+/*******- end -*/
+
+  font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 1.3em 1em;
+  background: #fff;
+}
+.page#process .process-block.top {
+  margin-top: 3em;
+}
+.page#process .process-block.top .inner-column {
+  border-radius: 1em 1em 0 0;
+}
+.page#process .process-block.bottom .inner-column {
+  border-radius: 0 0 1em 1em;
+}
+.page#process .process-block .inner-column {
+  width: 2em;
+  height: 100%;
+  position: absolute;
+  right: 50%;
+  margin-right: -1em;
+}
+.page#process .process-block.projecting > .inner-column {
+  background-color: #CD2E41;
+}
+.page#process .process-block.projecting .message {
+  border: 5px solid #CD2E41;
+  border-radius: 7px;
+  color: #104795;
+}
+.page#process .process-block.design > .inner-column {
+  background-color: #FF981C;
+}
+.page#process .process-block.design .message {
+  border: 5px solid #FF981C;
+  border-radius: 7px;
+  color: #A01425;
+}
+.page#process .process-block.backend > .inner-column {
+  background-color: #1254B0;
+}
+.page#process .process-block.backend .message {
+  border: 5px solid #1254B0;
+  border-radius: 7px;
+  color: #BA6704;
+}
+.page#process .process-block.layout > .inner-column {
+  background-color: #418B1B;
+}
+.page#process .process-block.layout .message {
+  border: 5px solid #418B1B;
+  border-radius: 7px;
+  color: #104795;
+}
+.page#process .process-block.frontend > .inner-column {
+  background-color: #CD2E41;
+}
+.page#process .process-block.frontend .message {
+  border: 5px solid #CD2E41;
+  border-radius: 7px;
+  color: #2B630E;
+}
+.page#process .process-block.server > .inner-column {
+  background-color: #FF981C;
+}
+.page#process .process-block.server .message {
+  border: 5px solid #FF981C;
+  border-radius: 7px;
+  color: #A01425;
+}
+.page#portfolio .ui.card .content.fix {
+  min-height: 320px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .page#portfolio .ui.card .content.fix {
+    min-height: 283px;
+  }
+}
+.page#portfolio .ui.card .content.fix-mini {
+  min-height: 136px;
+}
+.page#portfolio .ui.card .content.fix-mid {
+  min-height: 241px;
+}
+.page#portfolio .ui.card .content.window {
+  position: relative;
+  overflow: hidden;
+}
+.page#portfolio .ui.card .content.window > img {
+  position: absolute;
+}
+.page#portfolio .ui.card .content.window#ikmed > img {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(900px) rotate3d(1, 1, 0, 20deg);
+          transform: perspective(900px) rotate3d(1, 1, 0, 20deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.page#portfolio .ui.card .content.window#ikmed > img:hover {
+  -webkit-transform: perspective(900px) rotate3d(1, 1, 0, 0deg);
+          transform: perspective(900px) rotate3d(1, 1, 0, 0deg);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .page#portfolio .ui.card .content.window#ikmed img {
+    -webkit-transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 20deg);
+            transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 20deg);
+  }
+  .page#portfolio .ui.card .content.window#ikmed img:hover {
+    -webkit-transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 0deg);
+            transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 0deg);
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.ikmed-logo {
+    top: 0;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.iphone {
+    top: 6.83em;
+    left: 51.7em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.chrome {
+    top: 0;
+    left: 16em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.ipad {
+    top: 0.3em;
+    left: 39.8em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .page#portfolio .ui.card .content.window#ikmed img {
+    -webkit-transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 20deg);
+            transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 20deg);
+  }
+  .page#portfolio .ui.card .content.window#ikmed img:hover {
+    -webkit-transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 0deg);
+            transform: scale(0.77) perspective(900px) rotate3d(1, 1, 0, 0deg);
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.ikmed-logo {
+    top: 0;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.iphone {
+    top: 6.83em;
+    left: 37.3em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.chrome {
+    top: 0;
+    left: 2.9em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.ipad {
+    top: 0.3em;
+    left: 26em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page#portfolio .ui.card .content.window#ikmed img {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.iphone {
+    position: relative;
+    z-index: 100;
+    left: 15em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.ipad {
+    left: 35em;
+  }
+  .page#portfolio .ui.card .content.window#ikmed img.chrome {
+    left: 15%;
+  }
+}
+.page#portfolio .ui.card .content.window#ikmed .ikmed-logo {
+  top: 1em;
+  left: 1em;
+}
+.page#portfolio .ui.card .content.window#ikmed .chrome {
+  top: 1em;
+  left: 20em;
+}
+.page#portfolio .ui.card .content.window#ikmed .ipad {
+  top: 1.4em;
+  left: 48.5em;
+}
+.page#portfolio .ui.card .content.window#ikmed .iphone {
+  top: 8.7em;
+  left: 62.5em;
+}
+.page#portfolio .ui.card .content.window#ikmed-orders > img.ikmed-logo {
+  top: 1em;
+  right: -1.5em;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+.page#portfolio .ui.card .content.window#ikmed-orders > img.chrome-1 {
+  top: 1em;
+  left: 1em;
+}
+.page#portfolio .ui.card .content.window#ikmed-orders > img.chrome-2 {
+  top: 1em;
+  left: 10em;
+}
+.page#portfolio .ui.card .content.window#ikmed-orders > img.chrome-3 {
+  top: 1em;
+  left: 20em;
+}
+.page#portfolio .ui.card .content.window#ikmed-orders > img.chrome-4 {
+  top: 1em;
+  left: 30em;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img {
+  -webkit-transform: scale(0.77);
+          transform: scale(0.77);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  z-index: 5;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img:hover {
+  z-index: 10;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img.ikmed-logo {
+  top: 4em;
+  right: -9.6em;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img.chrome-1 {
+  top: 1em;
+  left: 1em;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img.chrome-2 {
+  top: 1em;
+  left: 11em;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img.chrome-3 {
+  top: 1em;
+  left: 21em;
+}
+.page#portfolio .ui.card .content.window#ikmed-admin-panel > img.chrome-4 {
+  top: 1em;
+  left: 31em;
+}
+.page#portfolio .ui.card .content.window#ikmed-prices > img.ikmed-logo {
+  top: 8em;
+  right: -4.9em;
+  -webkit-transform: rotate(-45deg) scale(0.6);
+          transform: rotate(-45deg) scale(0.6);
+  opacity: 0.3;
+}
+.page#portfolio .ui.card .content.window#ikmed-prices > img.chrome {
+  top: 1em;
+  left: 1em;
+}
+.page#price #clock-offer {
+  font-family: 'Roboto Mono', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #1254B0;
+  padding-bottom: 80px;
+}
+.page#price #clock-offer .price-description {
+  text-align: center;
+  font-size: 1.0666666em;
+  font-weight: bold;
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .page#price #clock-offer .price-description {
+    margin-bottom: 4em;
+  }
+}
+.page#price #clock-offer .price-description .ui.header > .image > img,
+.page#price #clock-offer .price-description .ui.header > img {
+  width: auto;
+  margin-top: -8px;
+}
+@media only screen and (max-width: 767px) {
+  .page#price #clock-offer .price-description {
+    width: 100% !important;
+  }
+}
+.page#price #clock-offer .price-description .clamp {
+  position: absolute;
+  top: 1.07em;
+}
+.page#price #clock-offer .price-description .clamp.left {
+  left: -9em;
+}
+.page#price #clock-offer .price-description .clamp.right {
+  right: -9em;
+}
+.page#price #clock-offer #papers {
+  position: relative;
+}
+.page#price #clock-offer #papers .one-thousand-papers {
+  position: absolute;
+  top: 1em;
+  left: 4.7em;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .page#price #clock-offer #papers .one-thousand-papers {
+    left: 1.5em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .page#price #clock-offer #papers .one-thousand-papers {
+    left: 1.2em;
+  }
+}
+.page#price #clock-offer #papers .one-thousand-papers .paper {
+  position: absolute;
+}
+.page#price #clock-offer #papers .one-thousand-papers .paper.front {
+  top: 0;
+  left: 0;
+}
+.page#price #clock-offer #papers .one-thousand-papers .paper.back {
+  top: 2em;
+  left: 2em;
+}
+.page#price #clock-offer #papers .one-thousand-papers .paper img {
+  
+/* thousand-paper-front: */
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.page#price #clock-offer #equal-sign {
+  font-size: 6em;
+  color: #CD2E41;
+  padding-top: 1.3em;
+}
+@media only screen and (min-width: 1200px) {
+  .page#price #clock-offer #equal-sign {
+    padding-left: 0.2em;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .page#price #clock-offer #equal-sign {
+    padding-left: 0.3em;
+  }
+}
+.page#price #clock-offer #clocks {
+  padding-top: 3em;
+}
+.page#price #price-descriptions .description {
+  border-radius: 8px;
+  margin-bottom: 3em;
+}
+@media only screen and (max-width: 991px) {
+  .page#price #price-descriptions .description {
+    padding: 1rem;
+  }
+}
+.page#price #price-descriptions .description.sniper {
+  border: 3px solid #CF2B3D;
+  background: #D5E6E5;
+  min-height: 260px;
+}
+.page#price #price-descriptions .description.sniper .img.large {
+  background: url(/static/img/adminoid/pages/price/sniper-img.jpg) 100% 0 no-repeat;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .page#price #price-descriptions .description.sniper .img.small img {
+    height: 40vh;
+    width: 40vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 60% 50%;
+       object-position: 60% 50%;
+  }
+}
+.page#price #price-descriptions .description.video {
+  background-image: -webkit-linear-gradient(top, #EDE9EA 0%, #EDE9EA 52%, #EAE8E9 79%, #E8E2E4 100%);
+  background-image: linear-gradient(-180deg, #EDE9EA 0%, #EDE9EA 52%, #EAE8E9 79%, #E8E2E4 100%);
+  border: 3px solid #FF981C;
+  min-height: 260px;
+}
+.page#price #price-descriptions .description.video .img.large {
+  background: url(/static/img/adminoid/pages/price/girl-with-camera.jpg) 100% 50% no-repeat;
+}
+.page#price #price-descriptions .description.greed {
+  background: #F6F6F6;
+  border: 3px solid #1254B0;
+  min-height: 260px;
+}
+.page#price #price-descriptions .description.greed .img.large {
+  background: url(/static/img/adminoid/pages/price/greed-img.jpg) 0% 50% no-repeat;
+}
+.page#price #price-descriptions .description.total {
+  background: #FFF;
+  border: 3px solid #418B1B;
+  min-height: 260px;
+}
+.page#price #price-descriptions .description.total .img.large {
+  background: url(/static/img/adminoid/pages/price/money-img.jpg) 50% 50% no-repeat;
+}
+@media only screen and (max-width: 991px) {
+  .page#price #price-descriptions .description .column.img {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    vertical-align: middle;
+    -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
+        align-self: center !important;
+  }
+}
+.page#price #price-descriptions .description .column.img .img.large {
+  width: 100%;
+  height: 100%;
+}
+.page#price #price-descriptions .description .column.img .img.small img {
+  margin: auto;
+}
+.page#price #price-descriptions .description .text {
+  font-family: 'Roboto Mono', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.page#price #price-descriptions .description > .column.img {
+  padding: 0;
+}
+#tools .block {
+  border: 2px dashed #FF981C;
+}
+#tools .block:hover {
+  border: 2px solid #418B1B;
+}
+#tools .block .images-wrapper {
+  min-width: 325px;
+  min-height: 170px;
+  position: relative;
+}
+#tools .block .images-wrapper img {
+  position: absolute;
+}
+#tools .block#projecting .images-wrapper img#lucidchart {
+  top: 29px;
+  left: 15px;
+}
+#tools .block#projecting .images-wrapper img#brain {
+  top: 84px;
+  left: 253px;
+}
+#tools .block#design .images-wrapper img#sketch {
+  top: 16px;
+  left: 44px;
+}
+#tools .block#design .images-wrapper img#photoshop {
+  top: 70px;
+  left: 253px;
+}
+#tools .block#backend .images-wrapper img#laravel {
+  top: 31px;
+  left: 12px;
+}
+#tools .block#backend .images-wrapper img#php {
+  top: 32px;
+  left: 67px;
+}
+#tools .block#backend .images-wrapper img#php-storm {
+  left: 190px;
+  top: 14px;
+}
+#tools .block#backend .images-wrapper img#git {
+  left: 282px;
+  top: 15px;
+}
+#tools .block#backend .images-wrapper img#php-unit {
+  left: 196px;
+  top: 100px;
+}
+#tools .block#backend .images-wrapper img#composer {
+  left: 286px;
+  top: 90px;
+}
+#tools .block#frontend .images-wrapper img#vue-js {
+  top: 19px;
+  left: 41px;
+}
+#tools .block#frontend .images-wrapper img#javascript {
+  top: 61px;
+  left: 19px;
+}
+#tools .block#frontend .images-wrapper img#chai {
+  top: 17px;
+  left: 163px;
+}
+#tools .block#frontend .images-wrapper img#mocha {
+  top: 17px;
+  left: 212px;
+}
+#tools .block#frontend .images-wrapper img#karma {
+  top: 70px;
+  left: 183px;
+}
+#tools .block#frontend .images-wrapper img#webpack {
+  top: 12px;
+  left: 262px;
+}
+#tools .block#frontend .images-wrapper img#node-js {
+  top: 120px;
+  left: 166px;
+}
+#tools .block#frontend .images-wrapper img#babel {
+  top: 131px;
+  left: 280px;
+}
+#tools .block#administration .images-wrapper img#docker {
+  top: 29px;
+  left: 21px;
+}
+#tools .block#administration .images-wrapper img#nginx {
+  top: 17px;
+  left: 187px;
+}
+#tools .block#administration .images-wrapper img#ubuntu {
+  top: 16px;
+  left: 283px;
+}
+#tools .block#administration .images-wrapper img#apache {
+  top: 115px;
+  left: 184px;
+}
+#tools .block#administration .images-wrapper img#debian {
+  top: 83px;
+  left: 284px;
+}
+#tools .block#additional .images-wrapper img#google-spreadsheet {
+  top: 24px;
+  left: 41px;
+}
+#tools .block#additional .images-wrapper img#ext-js {
+  top: 103px;
+  left: 42px;
+}
+
+
+/*******************************
+         Site Overrides
+*******************************/
+
