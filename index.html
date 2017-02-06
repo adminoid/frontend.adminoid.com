@@ -30,9 +30,9 @@
 
 <div class="ui right sidebar inverted red vertical menu active" id="top-menu-sidebar">
   <a href="/" class="item">Главная</a>
-  <a href="/process.html" class="item">Процесс</a>
+  <a href="/process.html" class="item active">Процесс</a>
   <a href="/price.html" class="item">Цена</a>
-  <a href="/portfolio.html" class="item active">Портфолио</a>
+  <a href="/portfolio.html" class="item">Портфолио</a>
   <a href="/tools.html" class="item">Инструменты</a>
 </div>
 
@@ -206,13 +206,13 @@
               <a href="/" class="item">
                 Главная
               </a>
-              <a href="/process.html" class="item">
+              <a href="/process.html" class="item active">
                 Процесс
               </a>
               <a href="/price.html" class="item">
                 Цена
               </a>
-              <a href="/portfolio.html" class="item active">
+              <a href="/portfolio.html" class="item">
                 Портфолио
               </a>
               <a href="/tools.html" class="item">
@@ -224,334 +224,148 @@
       </div>
     </top-menu>
 
-    <div class="ui page container" id="portfolio">
-
-      <h1 class="ui blue header">Портфолио</h1>
-
-      <div class="ui stackable grid">
-        <div class="sixteen wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Интернет-магазин ikmed.ru</h3>
-              <div class="right floated meta green"><i class="calendar icon"></i>19.12.2014-19.03.2016
-              </div>
-            </div>
-            <div class="content window fix" id="ikmed">
-              <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
-                   alt="">
-              <img class="iphone " src="/static/img/adminoid/pages/portfolio/presentations/ikmed/iphone.png"
-                   alt="">
-              <img class="ipad" src="/static/img/adminoid/pages/portfolio/presentations/ikmed/tablet.png"
-                   alt="">
-              <img class="chrome" src="/static/img/adminoid/pages/portfolio/presentations/ikmed/chrome.jpg"
-                   alt="">
-            </div>
-            <div class="extra content">
-                    <span class="right floated links">
-                        <a href="https://www.ikmed.ru/"><i class="linkify icon"></i>www.ikmed.ru</a><br>
-                        <a href="https://bitbucket.org/adminoid/ikmed.ru/"><i class="bitbucket icon"></i>https://bitbucket.org/adminoid/ikmed.ru/</a>
-                    </span>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/photoshop.png">
-                Photoshop</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/jquery.png">
-                jQuery</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/twitter-bootstrap.png">
-                twitter bootstrap</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/grunt.png"> Grunt</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/javascript.png">
-                Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/composer.png">
-                Composer</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-            </div>
+    <div class="ui page container" id="process">
+      <h1 class="ui blue header">Пример рабочего процесса. На примере этого сайта.</h1>
+      <div class="ui grid process-block projecting top">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Проектирование</h2>
+            <p>
+              Фундаментом любого проекта является проектирование. Прежде чем что-то делать нужно понять что именно.
+              И уже после того, как стало ясно что делать, можно думать над тем как именно делать. И только потом можно
+              начинать подсчитывать примерные сроки и цену. Если вам кто-то сказал цену или срок на проект без
+              предварительного проектирования - то этот человек совсем не ценит свои слова и бросает их на ветер как
+              пустой фантик. Ибо чтобы что-то сложить и получить конкретные цифры - надо иметь конкретные слагаемые.
+              Если вы верите пустым обещаниям или надеетесь поймать на слове, чтобы вам делали бесплатно часть работы -
+              значит вы достойны друг друга, вот и мучайтесь, пожалуйста, а мне работать не мешайте.
+              Для проектирования использую lucidchart. Для логики я рисую блок схемы. Для баз данных - ERM диаграммы.
+            </p>
           </div>
-        </div>
-
-        <div class="sixteen wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Админка заказов для Интернет-магазина ikmed.ru</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2015</div>
-            </div>
-            <div class="content window fix" id="ikmed-orders">
-              <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
-                   alt="">
-              <img class="chrome-1 zoom"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-orders/chrome.jpg"
-                   alt="">
-            </div>
-            <div class="extra content">
-                    <span class="right floated links">
-                        <a href="https://bitbucket.org/adminoid/ikmed.ru/"><i class="bitbucket icon"></i>https://bitbucket.org/adminoid/ikmed.ru/</a>
-                    </span>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/ext-js.png"> ExtJs</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-            </div>
+        </half-rotate>
+      </div>
+      <div class="ui grid process-block design">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Дизайн</h2>
+            <p>
+              Сейчас веб-дизайн я проектирую в программе Sketch.app. Почему именно Sketch - вы можете нагуглить массу
+              материала и почитать, если вам интересно, от себя кажу что основания для этого выбора есть и они твердые.
+              При необходимости я могу использовать Photoshop, с ним я начал работать еще с 1998-1999 годов.
+            </p>
           </div>
-        </div>
-
-        <div class="sixteen wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Админка товаров для Интернет-магазина ikmed.ru</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2016</div>
-            </div>
-            <div class="content window fix" id="ikmed-admin-panel">
-              <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
-                   alt="">
-              <img class="chrome-1"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-admin-panel/chrome-1.jpg"
-                   alt="">
-              <img class="chrome-2"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-admin-panel/chrome-2.jpg"
-                   alt="">
-              <img class="chrome-3"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-admin-panel/chrome-3.jpg"
-                   alt="">
-              <img class="chrome-4"
-                   src="/static/img/adminoid/pages/portfolio/presentations/ikmed-admin-panel/chrome-4.jpg"
-                   alt="">
-            </div>
-            <div class="extra content">
-                            <span class="right floated links">
-                                <a href="https://bitbucket.org/adminoid/ikmed.ru/"><i class="bitbucket icon"></i>https://bitbucket.org/adminoid/ikmed.ru/</a>
-                            </span>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/twitter-bootstrap.png">twitter
-                bootstrap</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/vue-js.png"> Vue.js</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/jquery.png"> jQuery</a>
-            </div>
+        </half-rotate>
+      </div>
+      <div class="ui grid process-block backend">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Бэкенд</h2>
+            <p>
+              На PHP я профессионально программирую где-то с 2009 года. В качестве основы использую Laravel PHP
+              framework.
+              Разрабатываю по методике TDD (разработка через тестирование).
+              На данный момент, я не представляю с какой задачей я бы не справился…
+              Разве что не ответил бы на какие-то каверзные вопросы, не относящиеся к делу, переходящие из рук в руки от
+              бестолковых, тупых, ничего не умеющих профессиональных льстецов, шутов и подстилок.
+            </p>
           </div>
-        </div>
-
-        <div class="sixteen wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Панель управления ценами и акциями, мониторинг позиций на Яндекс.Маркет для
-                Интернет магазина ikmed.ru</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2015</div>
-            </div>
-
-            <zoom startLeft="-300" startTop="-200" inline-template>
-              <div class="content window fix" id="ikmed-prices"
-                   @mouseenter="startZoom" @touchstart="startZoom"
-                   @mousemove="onZoom" @touchmove="onZoom"
-                   @mouseleave="stopZoom" @touchend="stopZoom">
-                <img class="chrome zoom"
-                     src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg"
-                     alt=""
-                     :style="{ left: left + 'px', top: top + 'px' }">
-                <img class="ikmed-logo" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-logo-big.png"
-                     alt="">
-              </div>
-            </zoom>
-
-            <div class="extra content">
-              <span class="right floated links">
-                  <a href="https://bitbucket.org/adminoid/ikmed.ru/"><i class="bitbucket icon"></i>https://bitbucket.org/adminoid/ikmed.ru/</a>
-              </span>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-            </div>
+        </half-rotate>
+      </div>
+      <div class="ui grid process-block layout">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Верстка</h2>
+            <p>
+              Хотя верстка - это часть работ по фронтенду, ее можно выделить в отдельный пункт. Сейчас я верстаю
+              используя
+              LESS или SASS, хотя до этого долгое время верстал на чистом CSS, в том числе сверстал множество сайтов для
+              IE6, а когда-то даже и табличной версткой.
+              По необходимости использую Grunt или Gulp или webpack сборщики.
+            </p>
+            <p>
+              В качестве css фреймворков я чаще всего использовал Twitter Bootstrap, а для этого сайта - Semantic UI, но
+              вообще сейчас я рекомендую Bourbon.
+            </p>
+            <p>
+              Верстаю исключительно отзывчивый дизайн для всех популярных устройств.
+            </p>
           </div>
-        </div>
-
-        <div class="sixteen wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2013-2014</div>
-            </div>
-            <div class="content window fix">
-              <img class="chrome" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg"
-                   alt="">
-            </div>
-            <div class="extra content">
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-            </div>
+        </half-rotate>
+      </div>
+      <div class="ui grid process-block frontend">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Фронтенд</h2>
+            <p>
+              В качестве каркаса использую Vue.js, если вкратце - он быстрее и легковеснее Angular.js, но с ним надо
+              уметь
+              думать самому.
+              Активно использую возможности ECMAScript 5/6 через Babel конвертер, собираю фронтенд с помощью Webpack.
+              Пишу по методологии TDD (разработка через тестирование): Karma + Sinon + Chai + Mocha.
+            </p>
+            <p>
+              Примеры кода: ссылки на код
+            </p>
+            <p>
+              Примеры тестов: ссылки на тесты
+            </p>
           </div>
-        </div>
+        </half-rotate>
+      </div>
 
-        <div class="eight wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2013-2014</div>
-            </div>
-            <div class="content window fix-mini">
-              <img class="chrome" src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg"
-                   alt="">
-            </div>
-            <div class="extra content">
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-            </div>
+      <div class="ui grid process-block server bottom">
+        <div class="inner-column"></div>
+        <half-rotate inline-template>
+          <div class="sixteen wide column message"
+               @mousemove="onHover"
+               @mouseleave="onLeave"
+               :style="{ transform: 'rotateY(' + widthAngle + 'deg)' + 'rotateX(' + heightAngle + 'deg)' }">
+            <h2>Сервер</h2>
+            <p>
+              Я работал администратором Linux/Unix серверов с 2001 по 2005 годы, раотал с FreeBSD, OpenBSD, Solaris,
+              Debian. После этого я так же всегда сам настраиваю сервера.
+            </p>
+            <p>
+              Сейчас в качетсе основы я использую Docker, эта штука позволяет сохранять конфигурацию сервера в текстовых
+              файлах и затем разворачивать сервер где угодно: на хостинге, в облаках, на локальной машине - и всегда
+              будет
+              вставать один и тот же преднастроенный сервер. Так же Docker позволяет на одной машине иметь несколько
+              разных серверов и конфигураций параллельно, при этом не нагружая железо. И еще им можно делать кластеры:
+              один виртуальный сервер размещенный на нескольких физических машинах. Очень необходимая вещь, не вижу
+              смысла
+              ее не использовать.
+              Сам сервер я настраиваю приемущественно в LEMP stack (Ubuntu, NGINX, MySql, PHP). Раньше, еще с
+              незапямятных
+              времен использовал LAMP stack.
+            </p>
+            <p>
+              Этот сайт и другие мои сайты работают на Docker на хостинге стоимостью 500 рублей в месяц. Одновременно
+              там
+              работает несколько версий PHP и несколько разных конфигураций для разных сайтов, а раньше пришлось бы
+              покупать отдельный хостинг под каждую конфигурацию. И, если мне понадобится сменить хостинг, я быстро
+              перенесу все сервера куда угодно, они уже преднастроены заранее.
+            </p>
           </div>
-        </div>
-
-        <div class="eight wide column">
-          <div class="ui card">
-            <div class="content">
-              <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-              <div class="right floated meta yellow"><i class="calendar icon"></i>2013-2014</div>
-            </div>
-            <div class="content window fix-mini">
-              <p>
-                Backend:
-                PHP 5.6, Laravel 4.2, Ubuntu (homestead/Forge), Linode;
-                Frontend:
-                HTML5, CSS3, LESS, SASS, Twitter bootstrap 3, Grunt;
-                JavaScript, Vue.js, JQuery, ExtJS, and other simple js frameworks;
-
-                Интеграция с: СДЭК, Яндекс.Касса, Яндекс.Маркет
-                SEO-оптимизация
-              </p>
-            </div>
-            <div class="extra content">
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png"> Laravel</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-              <a class="ui image label original"><img
-                  src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-              <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png"> LESS</a>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="stackable doubling four column row">
-          <div class="column">
-            <div class="ui card fade">
-              <div class="content">
-                <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-                <div class="right floated meta yellow"><i class="calendar icon"></i>2013-2014</div>
-              </div>
-              <div class="content window fix-mid">
-                <img class="chrome"
-                     src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg" alt="">
-              </div>
-              <div class="extra content">
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png">
-                  Laravel</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png">
-                  LESS</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="ui card fade">
-              <div class="content">
-                <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-                <div class="right floated meta green"><i class="calendar icon"></i>2013-2014</div>
-              </div>
-              <div class="content window fix-mid">
-                <p>
-                  Backend:
-                  PHP 5.6, Laravel 4.2, Ubuntu (homestead/Forge), Linode;
-                  Frontend:
-                  HTML5, CSS3, LESS, SASS, Twitter bootstrap 3, Grunt;
-                  JavaScript, Vue.js, JQuery, ExtJS, and other simple js frameworks;
-
-                  Интеграция с: СДЭК, Яндекс.Касса, Яндекс.Маркет
-                  SEO-оптимизация
-                </p>
-              </div>
-              <div class="extra content">
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png">
-                  Laravel</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png">
-                  LESS</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="ui card faded">
-              <div class="content">
-                <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-                <div class="right floated meta yellow"><i class="calendar icon"></i>2013-2014</div>
-              </div>
-              <div class="content window fix-mid">
-                <img class="chrome"
-                     src="/static/img/adminoid/pages/portfolio/presentations/ikmed-prices/chrome.jpg" alt="">
-              </div>
-              <div class="extra content">
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png">
-                  Laravel</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png">
-                  LESS</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="ui card faded">
-              <div class="content">
-                <h3 class="left floated">Проектирование БД для магазина плитки</h3>
-                <div class="right floated meta green"><i class="calendar icon"></i>2013-2014</div>
-              </div>
-              <div class="content window fix-mid">
-                <p>
-                  Backend:
-                  PHP 5.6, Laravel 4.2, Ubuntu (homestead/Forge), Linode;
-                  Frontend:
-                  HTML5, CSS3, LESS, SASS, Twitter bootstrap 3, Grunt;
-                  JavaScript, Vue.js, JQuery, ExtJS, and other simple js frameworks;
-
-                  Интеграция с: СДЭК, Яндекс.Касса, Яндекс.Маркет
-                  SEO-оптимизация
-                </p>
-              </div>
-              <div class="extra content">
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/laravel.png">
-                  Laravel</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/php.png"> PHP</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/javascript.png">Javascript</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/git.png"> Git</a>
-                <a class="ui image label original"><img src="/static/img/adminoid/icons/tags/less.png">
-                  LESS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        </half-rotate>
       </div>
     </div>
 
