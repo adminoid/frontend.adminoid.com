@@ -1,6 +1,10 @@
 # frontend.adminoid.com
 
-> A Vue.js project
+## Info about project
+
+[Docs](docs)
+
+## Info about Vue.js
 
 ## Build Setup
 
