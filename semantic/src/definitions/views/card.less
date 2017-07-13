@@ -45,6 +45,16 @@
 }
 .ui.card {
   margin: @margin;
+  &.fade{
+    > .content h3{
+      color: @lightBlack;
+    }
+  }
+  &.faded {
+    > .content h3 {
+      color: @lightedBlack;
+    }
+  }
 }
 
 .ui.cards > .card a,
@@ -152,6 +162,10 @@
   box-shadow: @contentBoxShadow;
   font-size: @contentFontSize;
   border-radius: @contentBorderRadius;
+  h3{
+    color: @blueTextColor;
+    margin-bottom: 0 !important;
+  }
 }
 
 .ui.cards > .card > .content:after,
@@ -267,9 +281,48 @@
 ---------------*/
 
 .ui.cards > .card .meta,
-.ui.card .meta {
-  font-size: @metaFontSize;
-  color: @metaColor;
+.ui.card {
+  .meta {
+    font-size: @metaFontSize;
+    color: @metaColor;
+    font-family: @codeFont;
+    &.green {
+      color: @green;
+    }
+    &.yellow {
+      color: @yellow;
+    }
+  }
+  &.fade {
+    .meta {
+      &.green {
+        color: @lightGreen;
+      }
+      &.yellow {
+        color: @lightYellow;
+      }
+    }
+    .content{
+      p{
+        color: @lightBlack;
+      }
+    }
+  }
+  &.faded {
+    .meta {
+      &.green {
+        color: @lightedGreen;
+      }
+      &.yellow {
+        color: @lightedYellow;
+      }
+    }
+    .content {
+      p {
+        color: @lightedBlack;
+      }
+    }
+  }
 }
 .ui.cards > .card .meta *,
 .ui.card .meta * {

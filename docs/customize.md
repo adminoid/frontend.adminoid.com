@@ -26,15 +26,14 @@ Copy folder ```semantic/src/themes/default/helpers```
 
 ### 2 
 ```
-semantic/src/definitions/elements/label.less
-semantic/src/definitions/views/card.less
 semantic/src/themes/default/collections/menu.overrides
 semantic/src/themes/default/collections/menu.variables
 semantic/src/themes/default/elements/label.variables
 semantic/src/themes/default/elements/segment.variables
 semantic/src/themes/default/views/card.overrides
 semantic/src/themes/default/views/card.variables
-
+semantic/src/definitions/elements/label.less
+semantic/src/definitions/views/card.less
 ```
 
 ## Replace _img_ to _static/img_ in page styles

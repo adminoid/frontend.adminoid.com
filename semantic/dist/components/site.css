@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.10 - Site
+ * # Semantic UI 2.2.11 - Site
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -112,6 +112,12 @@ a:hover {
 
 
 /*******************************
+         Scrollbars
+*******************************/
+
+
+
+/*******************************
           Highlighting
 *******************************/
 
@@ -145,6 +151,43 @@ textarea::selection,
 input::selection {
   background-color: rgba(100, 100, 100, 0.4);
   color: rgba(0, 0, 0, 0.87);
+}
+
+/* Force Simple Scrollbars */
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+body ::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+body ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.15);
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 135, 139, 0.8);
+}
+
+/* Inverted UI */
+body .ui.inverted::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+body .ui.inverted::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+}
+body .ui.inverted::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.15);
+}
+body .ui.inverted::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 
@@ -602,7 +645,8 @@ body#app {
 .page#price #clock-offer #papers .one-thousand-papers .paper img {
   
 /* thousand-paper-front: */
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 .page#price #clock-offer #equal-sign {
   font-size: 6em;
@@ -650,6 +694,7 @@ body#app {
   }
 }
 .page#price #price-descriptions .description.video {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EDE9EA), color-stop(52%, #EDE9EA), color-stop(79%, #EAE8E9), to(#E8E2E4));
   background-image: -webkit-linear-gradient(top, #EDE9EA 0%, #EDE9EA 52%, #EAE8E9 79%, #E8E2E4 100%);
   background-image: linear-gradient(-180deg, #EDE9EA 0%, #EDE9EA 52%, #EAE8E9 79%, #E8E2E4 100%);
   border: 3px solid #FF981C;
@@ -682,8 +727,7 @@ body#app {
     flex-direction: column;
     vertical-align: middle;
     -ms-flex-item-align: center !important;
-    -ms-grid-row-align: center !important;
-        align-self: center !important;
+    align-self: center !important;
   }
 }
 .page#price #price-descriptions .description .column.img .img.large {
