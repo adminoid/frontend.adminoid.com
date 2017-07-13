@@ -7,10 +7,8 @@ cd semantic
 gulp watch
 ```
 Information about semantic files placement
-> After install, there are 2 src distribution locations
-> 1) ```semantic/```
-> 2) ```src/semantic/```
-> Workable first place ```semantic/```!
+> After install, there are src distribution location:
+> ```semantic/```
 All source file placements compiles into one folder ```semantic/dist/```
 
 ## Global site settings files

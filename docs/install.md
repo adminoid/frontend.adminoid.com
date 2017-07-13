@@ -123,7 +123,7 @@ In file ```.eslintrc.js```
 ```
 
 ## If has errors eslint in included files
-add line in file begin:
+add line in file begin where error (for example in that project - semantic/dist/components/sidebar.min.js):
 ```javascript
 /* eslint-disable */
 ```
