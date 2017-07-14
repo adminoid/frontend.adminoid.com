@@ -95,7 +95,7 @@
           repeatDelay: step * 3
         })
         TweenMax.to(this.selectors.gsap.rectanglesBorderColor, step, {
-          fill: '#418B1B',
+          fill: '#1D60B5',
           repeat: -1,
           yoyo: true,
           repeatDelay: step * 3,

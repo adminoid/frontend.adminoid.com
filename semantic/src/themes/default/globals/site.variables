@@ -76,7 +76,8 @@
 
 @h1: 2rem;
 @h2: 1.714rem;
-@h3: 1.28rem;
+//@h3: 1.28rem;
+@h3: 1.48rem;
 @h4: 1.071rem;
 @h5: 1rem;
 
@@ -147,10 +148,12 @@
        Links
 --------------------*/
 
-@linkColor: #4183C4;
+@linkColor: #0E3F7E;
+//@linkUnderline: none;
 @linkUnderline: none;
 @linkHoverColor: darken(saturate(@linkColor, 20), 15, relative);
-@linkHoverUnderline: @linkUnderline;
+//@linkHoverUnderline: @linkUnderline;
+@linkHoverUnderline: underline;
 
 /*-------------------
     Scroll Bars
