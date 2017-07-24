@@ -19,6 +19,10 @@ switch (pageName) {
     let EffectBlock = require('./components/pages/index/EffectBlock')
     components = {Styles, TopMenu, Clouds, EffectBlock}
     break
+  case 'price':
+    let Clock = require('./components/pages/price/Clock')
+    components = {Styles, TopMenu, Clock}
+    break
   case 'portfolio':
     let Zoom = require('./components/pages/portfolio/Zoom')
     components = {Styles, TopMenu, Zoom}
@@ -26,10 +30,6 @@ switch (pageName) {
   case 'process':
     let HalfRotate = require('./components/pages/process/HalfRotate')
     components = {Styles, TopMenu, HalfRotate}
-    break
-  case 'price':
-    let Clock = require('./components/pages/price/Clock')
-    components = {Styles, TopMenu, Clock}
     break
   default:
     components = {Styles, TopMenu}

@@ -51,7 +51,7 @@
   }
 </script>
 <template>
-  <svg width="163px" height="163px" viewBox="0 0 163 163" version="1.1"
+  <svg id="clock" width="163px" height="163px" viewBox="0 0 163 163" version="1.1"
        @mouseover="onHover"
        @mouseleave="onLeave"
        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
