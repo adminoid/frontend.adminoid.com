@@ -14,16 +14,21 @@ var $ = jQuery
 var pageName = $('.ui.page.container').attr('id')
 var components = {}
 switch (pageName) {
+  case 'index':
+    let Clouds = require('./components/pages/index/Clouds')
+    let EffectBlock = require('./components/pages/index/EffectBlock')
+    components = {Styles, TopMenu, Clouds, EffectBlock}
+    break
   case 'portfolio':
-    let Zoom = require('./components/Zoom')
+    let Zoom = require('./components/pages/portfolio/Zoom')
     components = {Styles, TopMenu, Zoom}
     break
   case 'process':
-    let HalfRotate = require('./components/HalfRotate')
+    let HalfRotate = require('./components/pages/process/HalfRotate')
     components = {Styles, TopMenu, HalfRotate}
     break
   case 'price':
-    let Clock = require('./components/Clock')
+    let Clock = require('./components/pages/price/Clock')
     components = {Styles, TopMenu, Clock}
     break
   default:
