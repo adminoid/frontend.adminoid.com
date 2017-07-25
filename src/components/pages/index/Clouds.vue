@@ -1,5 +1,5 @@
 <script>
-  import {TimelineMax} from 'gsap'
+  import {TimelineMax, TweenLite} from 'gsap'
   export default {
     data: function () {
       return {
@@ -20,24 +20,24 @@
     methods: {
       // https://greensock.com/forums/topic/11673-how-to-hide-elements-so-they-arent-visible-before-animation-is-triggered/
       init: function () {
+        TweenLite.set(this.texts.veryBeautiful, {visibility: 'hidden'})
         const timeline = new TimelineMax({repeat: -1})
         timeline
-        .fromTo(this.clouds.minCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo(this.clouds.midCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
-        .fromTo(this.clouds.maxCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
-        .fromTo(this.texts.siteNeed, 0.3, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo(this.texts.siteNeed, 0.3, {autoAlpha: 1}, {autoAlpha: 0}, '+=2')
-        .fromTo(this.clouds.maxCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
-        .fromTo(this.clouds.midCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
-        .fromTo(this.clouds.minCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
-        .fromTo(this.clouds.minCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo(this.clouds.midCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
-        .fromTo(this.clouds.maxCloud, 0.3, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
-        .fromTo(this.texts.veryBeautiful, 0.3, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo(this.texts.veryBeautiful, 0.3, {autoAlpha: 1}, {autoAlpha: 0}, '+=2')
-        .fromTo(this.clouds.maxCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
-        .fromTo(this.clouds.midCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
-        .fromTo(this.clouds.minCloud, 0.1, {autoAlpha: 1}, {autoAlpha: 0})
+        .to(this.texts.siteNeed, 0.3, {autoAlpha: 0}, '+=2')
+        .to(this.clouds.maxCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.midCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.minCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.minCloud, 0.2, {autoAlpha: 1})
+        .to(this.clouds.midCloud, 0.2, {autoAlpha: 1})
+        .to(this.clouds.maxCloud, 0.2, {autoAlpha: 1})
+        .to(this.texts.veryBeautiful, 0.3, {autoAlpha: 1})
+        .to(this.texts.veryBeautiful, 0.3, {autoAlpha: 0}, '+=2')
+        .to(this.clouds.maxCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.midCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.minCloud, 0.1, {autoAlpha: 0})
+        .to(this.clouds.minCloud, 0.2, {autoAlpha: 1})
+        .to(this.clouds.midCloud, 0.2, {autoAlpha: 1})
+        .to(this.clouds.maxCloud, 0.2, {autoAlpha: 1})
       }
     }
   }
