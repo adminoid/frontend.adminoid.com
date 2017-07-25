@@ -903,19 +903,16 @@ li > ul {
   0% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 
   40% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 
   100% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
-    opacity: .9;
   }
 }
 
@@ -923,19 +920,16 @@ li > ul {
   0% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 
   40% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 
   100% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
-    opacity: .9;
   }
 }
 
@@ -943,13 +937,11 @@ li > ul {
   0% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
-    opacity: .9;
   }
 
   100% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 }
 
@@ -957,13 +949,11 @@ li > ul {
   0% {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
-    opacity: .9;
   }
 
   100% {
     -webkit-transform: scale(0.1, 0.1);
     transform: scale(0.1, 0.1);
-    opacity: 0;
   }
 }
 
@@ -1002,11 +992,12 @@ li > ul {
   -webkit-transform: scale(1, 1);
   /* Safari */
   transform: scale(1, 1);
-  opacity: .9;
+  opacity: .2;
   -webkit-animation-name: block-hover;
   animation-name: block-hover;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .page#index .effect-block:hover .inner .text,
@@ -1021,6 +1012,7 @@ li > ul {
   animation-fill-mode: forwards;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  color: #fff;
 }
 
 .page#index .effect-block.un-hover .inner {
@@ -1033,7 +1025,7 @@ li > ul {
   animation-name: block-unhover;
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 5px;
   bottom: 5px;
@@ -1059,6 +1051,7 @@ li > ul {
   transform: translate(-5000px, 0);
   width: 80%;
   font-size: 18px;
+  color: #fff;
 }
 
 .page#index .effect-block .inner {
@@ -1071,7 +1064,7 @@ li > ul {
   animation-name: block-unhover;
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 5px;
   bottom: 5px;
@@ -1097,6 +1090,7 @@ li > ul {
   transform: translate(-5000px, 0);
   width: 80%;
   font-size: 18px;
+  color: #fff;
 }
 
 .page#price #clock-offer {

@@ -62,173 +62,133 @@ li {
 @import "../helpers/visibility.less";
 
 /* Pages (Petja's custom) */
-@import "../pages/index";
-
-//@import "../pages/price";
-.page#price {
-  #clock-offer {
-    //min-height: 300px;
+//@import "../pages/index";
+.page#index {
+  #intro {
     font-family: @codeFont;
-    color: @blue;
-    padding-bottom: 45px;
-    @media only screen and (max-width: (@tabletBreakpoint - 1)) {
-      padding-bottom: 15px;
-    }
-    .price-description {
-      text-align: center;
-      @media only screen and (max-width: (@tabletBreakpoint - 1)) {
-        margin-bottom: 1em;
-      }
-      .ui.header > .image, .ui.header {
-        > img {
-          width: auto;
-          margin-top: -8px;
-        }
-      }
-      @media only screen and (max-width: (@tabletBreakpoint - 1)) {
-        width: 100% !important;
-      }
-      font-size: 1.0666666em;
+    font-size: 14px; // cd
+    a {
       font-weight: bold;
+    }
+    .column {
       position: relative;
-      .clamp {
+      #clouds {
         position: absolute;
-        top: 1.07em;
-        &.left {
-          left: -9em;
-        }
-        &.right {
-          right: -9em;
-        }
+        top: 17px;
+        left: 195px;
       }
-    }
-    #papers {
-      position: relative;
-      .one-thousand-papers {
-        position: absolute;
-        top: 1em;
-        left: 4.7em;
-        @media only screen and (min-width: @computerBreakpoint) and (max-width: (@largeMonitorBreakpoint - 1)) {
-          left: 1.5em;
-        }
-        @media only screen and (min-width: @tabletBreakpoint) and (max-width: (@computerBreakpoint - 1)) {
-          left: 1.2em;
-        }
-        .paper {
-          position: absolute;
-          &.front {
-            top: 0;
-            left: 0;
-          }
-          &.back {
-            top: 2em;
-            left: 2em;
-          }
-          img {
-            /* thousand-paper-front: */
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.50);
-          }
-        }
-      }
-    }
-    #equal-sign {
-      font-size: 6em;
-      color: @red;
-      padding-top: 1.3em;
-      @media only screen and (min-width: @largeMonitorBreakpoint) {
-        padding-left: 0.2em;
-      }
-      @media only screen and (min-width: @computerBreakpoint) and (max-width: (@largeMonitorBreakpoint - 1)) {
-        padding-left: 0.3em;
-      }
-    }
-    #clocks {
-      padding-top: 3em;
     }
   }
-  .notice{
-    font-family: @headerFontName;
-    padding-bottom: 3em;
+  @keyframes block-hover {
+    0% {
+      transform: scale(.1, .1);
+      //opacity: 0;
+    }
+    40% {
+      transform: scale(.1, .1);
+      //opacity: 0;
+    }
+    100% {
+      transform: scale(1, 1);
+      //opacity: .2;
+    }
   }
-  #price-descriptions {
-    .description {
-      border-radius: 8px;
-      margin-bottom: 3em;
-      @media only screen and (max-width: (@computerBreakpoint - 1)) {
-        padding: 1rem;
-      }
-      &.sniper {
-        border: 3px solid #358101;
-        background: #D5E6E5;
-        min-height: 260px;
-        .img.large {
-          background: url(/static/img/adminoid/pages/price/sniper-img.jpg) 100% 0 no-repeat;
-        }
-        .img.small {
-          img {
-            @media only screen and (min-width: @tabletBreakpoint) and (max-width: (@computerBreakpoint - 1)) {
-              height: 40vh;
-              width: 40vw;
-              object-fit: cover;
-              object-position: 60% 50%;
-            }
-          }
-        }
-      }
-      &.video {
-        background-image: linear-gradient(-180deg, #EDE9EA 0%, #EDE9EA 52%, #EAE8E9 79%, #E8E2E4 100%);
-        border: 3px solid #FF981C;
-        min-height: 260px;
-        .img.large {
-          background: url(/static/img/adminoid/pages/price/girl-with-camera.jpg) 100% 50% no-repeat;
-        }
-      }
-      &.greed {
-        background: #F6F6F6;
-        border: 3px solid #1254B0;
-        min-height: 260px;
-        .img.large {
-          background: url(/static/img/adminoid/pages/price/greed-img.jpg) 0% 50% no-repeat;
+  @keyframes block-unhover {
+    0% {
+      transform: scale(1, 1);
+      //opacity: .2;
+    }
+    100% {
+      transform: scale(.1, .1);
+      //opacity: 0;
+    }
+  }
+  @keyframes block-text-hover {
+    0% {
+      transform: translate(-5000, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  .effect-block {
+    position: relative;
+    cursor: pointer;
+    &:hover, .hover {
+      .inner {
+        -ms-transform: scale(1, 1); /* IE 9 */
+        -webkit-transform: scale(1, 1); /* Safari */
+        transform: scale(1, 1);
+        opacity: .2;
+        animation-name: block-hover;
+        animation-duration: 0.5s;
+        background-color: rgba(0, 0, 0, 0.3);
+        .text {
+          animation-name: block-text-hover;
+          animation-duration: 0.5s;
+          animation-delay: 0.15s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+          color: #fff;
         }
       }
-      &.total {
-        background: #FFF;
-        border: 3px solid #418B1B;
-        min-height: 260px;
-        .img.large {
-          background: url(/static/img/adminoid/pages/price/money-img.jpg) 50% 50% no-repeat;
+    }
+    &.un-hover {
+      .inner {
+        -ms-transform: scale(.1, .1); /* IE 9 */
+        -webkit-transform: scale(.1, .1); /* Safari */
+        transform: scale(.1, .1);
+        opacity: 0;
+        animation-name: block-unhover;
+        animation-duration: 0.3s;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        display: flex;
+        align-items: center; /* Vertical center alignment */
+        justify-content: center; /* Horizontal center alignment */
+        .text {
+          -ms-transform: translate(-5000px, 0); /* IE 9 */
+          -webkit-transform: translate(-5000px, 0); /* Safari */
+          transform: translate(-5000px, 0);
+          width: 80%;
+          font-size: 18px;
+          color: #fff;
         }
       }
-      .column.img {
-        @media only screen and (max-width: (@computerBreakpoint - 1)) {
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-          flex-direction: column;
-          vertical-align: middle;
-          -ms-flex-item-align: center !important;
-          align-self: center !important;
-        }
-        .img.large {
-          width: 100%;
-          height: 100%;
-        }
-        .img.small {
-          img {
-            margin: auto;
-          }
-        }
-      }
+    }
+    .inner {
+      -ms-transform: scale(.1, .1); /* IE 9 */
+      -webkit-transform: scale(.1, .1); /* Safari */
+      transform: scale(.1, .1);
+      opacity: 0;
+      animation-name: block-unhover;
+      animation-duration: 0.3s;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+      display: flex;
+      align-items: center; /* Vertical center alignment */
+      justify-content: center; /* Horizontal center alignment */
       .text {
-        font-family: @codeFont;
-        font-size: 14px;
-      }
-      > .column.img {
-        padding: 0;
+        -ms-transform: translate(-5000px, 0); /* IE 9 */
+        -webkit-transform: translate(-5000px, 0); /* Safari */
+        transform: translate(-5000px, 0);
+        width: 80%;
+        font-size: 18px;
+        color: #fff;
       }
     }
   }
 }
+
+@import "../pages/price";
 
 @import "../pages/process";
 
