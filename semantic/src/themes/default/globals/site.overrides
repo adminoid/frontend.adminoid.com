@@ -157,12 +157,22 @@ li {
       @media only screen and (max-width: (@computerBreakpoint - 1)) {
         padding: 1rem;
       }
-      &.sniper {
+      &.tomato {
         border: 3px solid #358101;
         background: #D5E6E5;
         min-height: 260px;
+        span#pomodoro{
+          color: #CA2235;
+          margin-right: -43px;
+          font-weight: bold;
+          img {
+            position: relative;
+            top: -5px;
+            left: -56px;
+          }
+        }
         .img.large {
-          background: url(/static/img/adminoid/pages/price/sniper-img.jpg) 100% 0 no-repeat;
+          background: url(/static/img/adminoid/pages/price/tomato-img.jpg) 100% 0 no-repeat;
         }
         .img.small {
           img {
@@ -170,7 +180,7 @@ li {
               height: 40vh;
               width: 40vw;
               object-fit: cover;
-              object-position: 60% 50%;
+              object-position: 90% 10%;
             }
           }
         }
@@ -183,12 +193,30 @@ li {
           background: url(/static/img/adminoid/pages/price/girl-with-camera.jpg) 100% 50% no-repeat;
         }
       }
+      &.speed {
+        //background: #F6F6F6;
+        border: 3px solid #1254B0;
+        min-height: 260px;
+        .img.large{
+          background: url(/static/img/adminoid/pages/price/speed-img.jpg) 100% 50% no-repeat;
+        }
+        .img.small {
+          img {
+            @media only screen and (min-width: @tabletBreakpoint) and (max-width: (@computerBreakpoint - 1)) {
+              height: 40vh;
+              width: 40vw;
+              object-fit: cover;
+              object-position: 90% 10%;
+            }
+          }
+        }
+      }
       &.greed {
         background: #F6F6F6;
         border: 3px solid #1254B0;
         min-height: 260px;
         .img.large {
-          background: url(/static/img/adminoid/pages/price/greed-img.jpg) 0% 50% no-repeat;
+          background: url(/static/img/adminoid/pages/price/greed-img.png) 0% 50% no-repeat;
         }
       }
       &.total {
