@@ -8,6 +8,10 @@ cd semantic
 gulp build
 gulp build-css
 ```
+
+In file ```package.json```
+Make semantic-ui without arrow
+
 Information about semantic files placement
 > After install, there are src distribution location:
 > ```semantic/```
