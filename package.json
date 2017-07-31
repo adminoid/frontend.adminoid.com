@@ -82,5 +82,7 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "semantic-ui": "^2.2.11"
+  }
 }
