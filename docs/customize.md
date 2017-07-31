@@ -2,9 +2,11 @@
 
 ## Start processes
 ```shell
+npm install semantic-ui --save-dev
 npm run dev
 cd semantic
-gulp watch
+gulp build
+gulp build-css
 ```
 Information about semantic files placement
 > After install, there are src distribution location:
@@ -49,3 +51,10 @@ static/img
 ## Clear default Vue #app styles
 ```src/App.vue```
 > Remove in style tag
+
+## Eslint errors fixing
+In file ```semantic/dist/components/sidebar.min.js```
+add to top: 
+```javascript
+/* eslint-disable */
+```
