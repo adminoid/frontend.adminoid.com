@@ -20,14 +20,13 @@
   "rtl": false,
   "components": [
     "reset",
-    "site",
     "button",
-    "container",
     "grid",
     "menu",
     "item",
     "sidebar",
-    "segment"
+    "segment",
+    "header"
   ],
   "version": "2.2.11"
 }
