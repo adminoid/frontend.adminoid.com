@@ -23,18 +23,11 @@
     "site",
     "button",
     "container",
-    "divider",
-    "image",
-    "segment",
     "grid",
-    "message",
-    "card",
+    "menu",
     "item",
-    "checkbox",
     "sidebar",
-    "transition",
-    "form",
-    "visibility"
+    "segment"
   ],
   "version": "2.2.11"
 }

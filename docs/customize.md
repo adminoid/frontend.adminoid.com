@@ -36,6 +36,7 @@ semantic/src/themes/default/collections/menu.overrides
 semantic/src/themes/default/collections/menu.variables
 semantic/src/themes/default/elements/label.variables
 semantic/src/themes/default/elements/segment.variables
+semantic/src/themes/default/elements/button.overrides
 semantic/src/themes/default/views/card.overrides
 semantic/src/themes/default/views/card.variables
 semantic/src/definitions/elements/label.less
