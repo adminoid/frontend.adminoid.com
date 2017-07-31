@@ -12,7 +12,8 @@
 @backgroundColor: #E8E8E8;
 @color: @mutedTextColor;
 @backgroundImage: none;
-@verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
+//@verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
+@verticalPadding: 0.5em; /* medium is not @emSize custom value required */
 @horizontalPadding: 0.833em;
 @borderRadius: @absoluteBorderRadius;
 @textTransform: none;
@@ -68,9 +69,11 @@
 @imageLabelDetailDistance: @imageLabelTextDistance;
 @imageLabelBorderRadius: @borderRadius;
 @imageLabelBoxShadow: none;
-@imageLabelPadding: @imageLabelVerticalPadding @imageLabelHorizontalPadding @imageLabelVerticalPadding @imageLabelTextDistance;
+//@imageLabelPadding: @imageLabelVerticalPadding @imageLabelHorizontalPadding @imageLabelVerticalPadding @imageLabelTextDistance;
+@imageLabelPadding: 0.4em 0.833em 0.5em 0.5em;
 
-@imageLabelImageMargin: -@verticalPadding @imageLabelTextDistance -@verticalPadding -@imageLabelTextDistance;
+//@imageLabelImageMargin: -@verticalPadding @imageLabelTextDistance -@verticalPadding -@imageLabelTextDistance;
+@imageLabelImageMargin: -0.6em 0.5em -0.5em -0.5em;
 @imageLabelImageBorderRadius: @imageLabelBorderRadius 0em 0em @imageLabelBorderRadius;
 @imageLabelImageHeight: @imageHeight;
 

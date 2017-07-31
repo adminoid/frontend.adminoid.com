@@ -35,7 +35,8 @@
   color: @color;
 
   text-transform: @textTransform;
-  font-weight: @fontWeight;
+  //font-weight: @fontWeight;
+  font-weight: normal;
 
   border: @border;
   border-radius: @borderRadius;
@@ -155,7 +156,8 @@ a.ui.label {
 
 .ui.image.label {
   width: auto !important;
-  margin-top: 0em;
+  //margin-top: 0em;
+  margin-top: 1em;
   margin-bottom: 0em;
   max-width: 9999px;
   vertical-align: baseline;
@@ -165,6 +167,14 @@ a.ui.label {
   padding: @imageLabelPadding;
   border-radius: @imageLabelBorderRadius;
   box-shadow: @imageLabelBoxShadow;
+  &.original{
+    //padding: 0.5em 0.833em 0.5em 0.733em;
+    height: 2em;
+    img {
+      margin: -8px 0.5em -0.5em 0 !important;
+      height: auto !important;
+    }
+  }
 }
 
 .ui.image.label img {
@@ -323,6 +333,7 @@ a.ui.label {
   min-width: max-content;
   border-radius: 0em @borderRadius @borderRadius 0em;
   border-color: @ribbonShadowColor;
+  font-family: @decorFont;
 }
 
 .ui.ribbon.label:after {
@@ -346,7 +357,8 @@ a.ui.label {
   left: @ribbonOffset;
   margin-right: -@ribbonTriangleSize;
   padding-left: @ribbonDistance;
-  padding-right: @ribbonTriangleSize;
+  //padding-right: @ribbonTriangleSize;
+  padding-right: @ribbonDistance;
 }
 .ui[class*="right ribbon"].label {
   left: @rightRibbonOffset;

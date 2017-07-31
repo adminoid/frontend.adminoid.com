@@ -62,3 +62,7 @@ add to top:
 ```javascript
 /* eslint-disable */
 ```
+
+## If preserveComments errors
+comment all preserveComments strings in file: ```semantic/tasks/config/tasks.js```
+
