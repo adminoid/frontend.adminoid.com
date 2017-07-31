@@ -1364,6 +1364,158 @@ li > ul {
   padding: 0;
 }
 
+#tools a {
+  border-bottom: dotted 2px #1D60B5;
+}
+
+#tools a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+#tools .block {
+  border: 2px dashed #FF981C;
+}
+
+#tools .block:hover {
+  border: 2px solid #418B1B;
+}
+
+#tools .block .images-wrapper {
+  min-width: 325px;
+  min-height: 170px;
+  position: relative;
+}
+
+#tools .block .images-wrapper img {
+  position: absolute;
+}
+
+#tools .block#projecting .images-wrapper img#lucidchart {
+  top: 29px;
+  left: 15px;
+}
+
+#tools .block#projecting .images-wrapper img#brain {
+  top: 84px;
+  left: 253px;
+}
+
+#tools .block#design .images-wrapper img#sketch {
+  top: 16px;
+  left: 44px;
+}
+
+#tools .block#design .images-wrapper img#photoshop {
+  top: 70px;
+  left: 253px;
+}
+
+#tools .block#backend .images-wrapper img#laravel {
+  top: 31px;
+  left: 12px;
+}
+
+#tools .block#backend .images-wrapper img#php {
+  top: 32px;
+  left: 67px;
+}
+
+#tools .block#backend .images-wrapper img#php-storm {
+  left: 190px;
+  top: 14px;
+}
+
+#tools .block#backend .images-wrapper img#git {
+  left: 282px;
+  top: 15px;
+}
+
+#tools .block#backend .images-wrapper img#php-unit {
+  left: 196px;
+  top: 100px;
+}
+
+#tools .block#backend .images-wrapper img#composer {
+  left: 286px;
+  top: 90px;
+}
+
+#tools .block#frontend .images-wrapper img#vue-js {
+  top: 19px;
+  left: 41px;
+}
+
+#tools .block#frontend .images-wrapper img#javascript {
+  top: 61px;
+  left: 19px;
+}
+
+#tools .block#frontend .images-wrapper img#chai {
+  top: 17px;
+  left: 163px;
+}
+
+#tools .block#frontend .images-wrapper img#mocha {
+  top: 17px;
+  left: 212px;
+}
+
+#tools .block#frontend .images-wrapper img#karma {
+  top: 70px;
+  left: 183px;
+}
+
+#tools .block#frontend .images-wrapper img#webpack {
+  top: 12px;
+  left: 262px;
+}
+
+#tools .block#frontend .images-wrapper img#node-js {
+  top: 120px;
+  left: 166px;
+}
+
+#tools .block#frontend .images-wrapper img#babel {
+  top: 131px;
+  left: 280px;
+}
+
+#tools .block#administration .images-wrapper img#docker {
+  top: 29px;
+  left: 21px;
+}
+
+#tools .block#administration .images-wrapper img#nginx {
+  top: 17px;
+  left: 187px;
+}
+
+#tools .block#administration .images-wrapper img#ubuntu {
+  top: 16px;
+  left: 283px;
+}
+
+#tools .block#administration .images-wrapper img#apache {
+  top: 115px;
+  left: 184px;
+}
+
+#tools .block#administration .images-wrapper img#debian {
+  top: 83px;
+  left: 284px;
+}
+
+#tools .block#additional .images-wrapper img#google-spreadsheet {
+  top: 24px;
+  left: 41px;
+}
+
+#tools .block#additional .images-wrapper img#ext-js {
+  top: 103px;
+  left: 42px;
+}
+
 .page#process .process-block {
   /*******- begin -*/
   position: relative;
@@ -1685,149 +1837,6 @@ li > ul {
 .page#portfolio .ui.card .content.window#ikmed-prices > img.chrome {
   top: 1em;
   left: 1em;
-}
-
-#tools .block {
-  border: 2px dashed #FF981C;
-}
-
-#tools .block:hover {
-  border: 2px solid #418B1B;
-}
-
-#tools .block .images-wrapper {
-  min-width: 325px;
-  min-height: 170px;
-  position: relative;
-}
-
-#tools .block .images-wrapper img {
-  position: absolute;
-}
-
-#tools .block#projecting .images-wrapper img#lucidchart {
-  top: 29px;
-  left: 15px;
-}
-
-#tools .block#projecting .images-wrapper img#brain {
-  top: 84px;
-  left: 253px;
-}
-
-#tools .block#design .images-wrapper img#sketch {
-  top: 16px;
-  left: 44px;
-}
-
-#tools .block#design .images-wrapper img#photoshop {
-  top: 70px;
-  left: 253px;
-}
-
-#tools .block#backend .images-wrapper img#laravel {
-  top: 31px;
-  left: 12px;
-}
-
-#tools .block#backend .images-wrapper img#php {
-  top: 32px;
-  left: 67px;
-}
-
-#tools .block#backend .images-wrapper img#php-storm {
-  left: 190px;
-  top: 14px;
-}
-
-#tools .block#backend .images-wrapper img#git {
-  left: 282px;
-  top: 15px;
-}
-
-#tools .block#backend .images-wrapper img#php-unit {
-  left: 196px;
-  top: 100px;
-}
-
-#tools .block#backend .images-wrapper img#composer {
-  left: 286px;
-  top: 90px;
-}
-
-#tools .block#frontend .images-wrapper img#vue-js {
-  top: 19px;
-  left: 41px;
-}
-
-#tools .block#frontend .images-wrapper img#javascript {
-  top: 61px;
-  left: 19px;
-}
-
-#tools .block#frontend .images-wrapper img#chai {
-  top: 17px;
-  left: 163px;
-}
-
-#tools .block#frontend .images-wrapper img#mocha {
-  top: 17px;
-  left: 212px;
-}
-
-#tools .block#frontend .images-wrapper img#karma {
-  top: 70px;
-  left: 183px;
-}
-
-#tools .block#frontend .images-wrapper img#webpack {
-  top: 12px;
-  left: 262px;
-}
-
-#tools .block#frontend .images-wrapper img#node-js {
-  top: 120px;
-  left: 166px;
-}
-
-#tools .block#frontend .images-wrapper img#babel {
-  top: 131px;
-  left: 280px;
-}
-
-#tools .block#administration .images-wrapper img#docker {
-  top: 29px;
-  left: 21px;
-}
-
-#tools .block#administration .images-wrapper img#nginx {
-  top: 17px;
-  left: 187px;
-}
-
-#tools .block#administration .images-wrapper img#ubuntu {
-  top: 16px;
-  left: 283px;
-}
-
-#tools .block#administration .images-wrapper img#apache {
-  top: 115px;
-  left: 184px;
-}
-
-#tools .block#administration .images-wrapper img#debian {
-  top: 83px;
-  left: 284px;
-}
-
-#tools .block#additional .images-wrapper img#google-spreadsheet {
-  top: 24px;
-  left: 41px;
-}
-
-#tools .block#additional .images-wrapper img#ext-js {
-  top: 103px;
-  left: 42px;
 }
 
 /*******************************
