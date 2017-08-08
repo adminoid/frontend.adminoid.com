@@ -90,9 +90,9 @@ module.exports = function(callback) {
     .pipe(gulpif(config.hasPermission, chmod(config.permission)))
     .pipe(gulp.dest(output.uncompressed))
     .pipe(print(log.created))
-    .on('end', function() {
-      runSequence('package uncompressed css', maybeCallback);
-    })
+//    .on('end', function() {
+//      runSequence('package uncompressed css', maybeCallback);
+//    })
   ;
 
   // compressed component css

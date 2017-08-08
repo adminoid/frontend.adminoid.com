@@ -23,6 +23,10 @@ switch (pageName) {
     let Clock = require('./components/pages/price/Clock')
     components = {Styles, TopMenu, Clock}
     break
+  case 'tools':
+    let ToolsBlock = require('./components/pages/tools/ToolsBlock')
+    components = {Styles, TopMenu, ToolsBlock}
+    break
   case 'portfolio':
     let Zoom = require('./components/pages/portfolio/Zoom')
     components = {Styles, TopMenu, Zoom}

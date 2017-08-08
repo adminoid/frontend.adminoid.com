@@ -26,7 +26,8 @@
     "item",
     "sidebar",
     "segment",
-    "header"
+    "header",
+    "site"
   ],
   "version": "2.2.11"
 }
