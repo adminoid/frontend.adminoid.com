@@ -1077,6 +1077,9 @@ li > ul {
   font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 1.3em 1em;
   background: #fff;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
 }
 .page#process .process-block.top {
   margin-top: 3em;
@@ -1101,6 +1104,7 @@ li > ul {
   border: 5px solid #CD2E41;
   border-radius: 7px;
   color: #104795;
+  background-color: #FEFBFB;
 }
 .page#process .process-block.design > .inner-column {
   background-color: #FF981C;
@@ -1109,6 +1113,23 @@ li > ul {
   border: 5px solid #FF981C;
   border-radius: 7px;
   color: #A01425;
+  background-color: #FFFCF8;
+}
+.page#process .process-block.design .message p {
+  margin: 0;
+}
+.page#process .process-block.design .message p img {
+  position: relative;
+  bottom: -24px;
+}
+.page#process .process-block.frontend > .inner-column {
+  background-color: #418B1B;
+}
+.page#process .process-block.frontend .message {
+  border: 5px solid #418B1B;
+  border-radius: 7px;
+  color: #104795;
+  background-color: #F8FBF7;
 }
 .page#process .process-block.backend > .inner-column {
   background-color: #1254B0;
@@ -1116,31 +1137,8 @@ li > ul {
 .page#process .process-block.backend .message {
   border: 5px solid #1254B0;
   border-radius: 7px;
-  color: #BA6704;
-}
-.page#process .process-block.layout > .inner-column {
-  background-color: #418B1B;
-}
-.page#process .process-block.layout .message {
-  border: 5px solid #418B1B;
-  border-radius: 7px;
-  color: #104795;
-}
-.page#process .process-block.frontend > .inner-column {
-  background-color: #CD2E41;
-}
-.page#process .process-block.frontend .message {
-  border: 5px solid #CD2E41;
-  border-radius: 7px;
   color: #2B630E;
-}
-.page#process .process-block.server > .inner-column {
-  background-color: #FF981C;
-}
-.page#process .process-block.server .message {
-  border: 5px solid #FF981C;
-  border-radius: 7px;
-  color: #A01425;
+  background-color: #F8FAFD;
 }
 .page#portfolio .ui.card .content.fix {
   min-height: 320px;
