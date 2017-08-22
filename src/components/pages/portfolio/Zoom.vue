@@ -79,7 +79,6 @@
         if (this.cursor.x) {
           return -(
               this.cursor.x * this.initialData.widthProportion - this.cursor.x - this.border
-//              (this.initialData.wrapperWidth / 4)
           )
         }
       },
@@ -87,7 +86,6 @@
         if (this.cursor.y) {
           return -(
               this.cursor.y * this.initialData.heightProportion - this.cursor.y - this.border
-//              (this.initialData.wrapperWidth / 4)
           )
         }
       }
