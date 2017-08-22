@@ -21,13 +21,18 @@
   "components": [
     "reset",
     "button",
+    "container",
     "grid",
     "menu",
     "item",
     "sidebar",
     "segment",
     "header",
-    "site"
+    "site",
+    "image",
+    "label",
+    "card",
+    "icon"
   ],
   "version": "2.2.11"
 }

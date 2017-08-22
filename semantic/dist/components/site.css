@@ -1140,26 +1140,30 @@ li > ul {
   color: #2B630E;
   background-color: #F8FAFD;
 }
+.page#portfolio .ui.card .content > img.zoom {
+  border: 1px solid rgba(34, 36, 38, 0.1);
+}
 .page#portfolio .ui.card .content.fix {
-  min-height: 320px;
+  height: 320px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .page#portfolio .ui.card .content.fix {
-    min-height: 283px;
+    height: 283px;
   }
 }
 .page#portfolio .ui.card .content.fix-mini {
-  min-height: 136px;
+  height: 136px;
 }
 .page#portfolio .ui.card .content.fix-mid {
-  min-height: 241px;
+  height: 241px;
 }
 .page#portfolio .ui.card .content.window {
-  cursor: move;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
   position: relative;
   overflow: hidden;
 }
-.page#portfolio .ui.card .content.window > img {
+.page#portfolio .ui.card .content.window > img.abs {
   position: absolute;
 }
 .page#portfolio .ui.card .content.window#ikmed > img {
@@ -1312,7 +1316,7 @@ li > ul {
   left: 31em;
 }
 .page#portfolio .ui.card .content.window#ikmed-prices > img.ikmed-logo {
-  top: 8em;
+  bottom: -5.6em;
   right: -4.9em;
   -webkit-transform: rotate(-45deg) scale(0.6);
           transform: rotate(-45deg) scale(0.6);

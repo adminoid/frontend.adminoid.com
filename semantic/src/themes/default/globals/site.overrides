@@ -74,23 +74,28 @@ li {
 .page#portfolio {
   .ui.card {
     .content {
+      > img.zoom {
+        //border: ;
+        border: 1px solid rgba(34, 36, 38, 0.1);
+      }
       &.fix {
-        min-height: 320px;
+        height: 320px;
         @media only screen and (min-width: @computerBreakpoint) and (max-width: (@largeMonitorBreakpoint - 1)) {
-          min-height: 283px;
+          height: 283px;
         }
       }
       &.fix-mini {
-        min-height: 136px;
+        height: 136px;
       }
       &.fix-mid {
-        min-height: 241px;
+        height: 241px;
       }
       &.window {
-        cursor: move;
+        //padding: 0 !important;
+        cursor: zoom-in;
         position: relative;
         overflow: hidden;
-        > img {
+        > img.abs {
           position: absolute;
         }
         &#ikmed {
@@ -239,7 +244,7 @@ li {
         &#ikmed-prices {
           > img {
             &.ikmed-logo {
-              top: 8em;
+              bottom: -5.6em;
               right: -4.9em;
               transform: rotate(-45deg) scale(0.6);
               opacity: 0.3;

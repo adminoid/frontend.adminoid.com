@@ -5,14 +5,6 @@
       image: {
         type: String,
         default: '.zoom'
-      },
-      startLeft: {
-        type: Number,
-        default: 0
-      },
-      startTop: {
-        type: Number,
-        default: 0
       }
     },
     data: function () {
@@ -36,10 +28,11 @@
         },
         $wrapper: {},
         $image: {},
-        padding: 0
+        border: 100
       }
     },
     created: function () {
+//      this.calculateSizesAndProportions()
       window.addEventListener('resize', this.calculateSizesAndProportions)
     },
     mounted: function () {
@@ -57,34 +50,46 @@
       calculateSizesAndProportions: function () {
         this.initialData.wrapperWidth = this.$wrapper.width()
         this.initialData.wrapperHeight = this.$wrapper.height()
-        this.initialData.imageWidth = this.$image.width()
-        this.initialData.imageHeight = this.$image.height()
-        this.initialData.widthProportion = this.initialData.imageWidth / this.initialData.wrapperWidth - 1
-        this.initialData.heightProportion = this.initialData.imageHeight / this.initialData.wrapperHeight - 1
-        this.initialData.scale = (this.initialData.widthProportion >= this.initialData.heightProportion) ? this.initialData.widthProportion : this.initialData.heightProportion
-        this.padding = (this.$wrapper.innerHeight() - this.$wrapper.height()) / 2
+        this.initialData.imageWidth = this.$image[0].naturalWidth + this.border * 2
+        this.initialData.imageHeight = this.$image[0].naturalHeight + this.border * 2
+        this.initialData.widthProportion = this.initialData.imageWidth / this.initialData.wrapperWidth
+        this.initialData.heightProportion = this.initialData.imageHeight / this.initialData.wrapperHeight
       },
       startZoom: function (e) {
-        this.calculateCursorPosition(e)
+        this.$image.css('position', 'absolute')
+        this.$image.removeClass('ui fluid image')
       },
       onZoom: function (e) {
         this.calculateCursorPosition(e)
       },
       stopZoom: function () {
+        // restore to original
+        this.$image.css('position', 'static')
+        this.$image.addClass('ui fluid image')
       },
       calculateCursorPosition: function (e) {
-        let xPos = e.pageX - this.$wrapper.offset().left - this.padding
-        let yPos = e.pageY - this.$wrapper.offset().top - this.padding
+        let xPos = e.pageX - this.$wrapper.offset().left
+        let yPos = e.pageY - this.$wrapper.offset().top
         this.cursor.x = parseInt(xPos, 10)
         this.cursor.y = parseInt(yPos, 10)
       }
     },
     computed: {
       left: function () {
-        return -parseInt(this.cursor.x * (this.initialData.widthProportion), 10)
+        if (this.cursor.x) {
+          return -(
+              this.cursor.x * this.initialData.widthProportion - this.cursor.x - this.border
+//              (this.initialData.wrapperWidth / 4)
+          )
+        }
       },
       top: function () {
-        return -parseInt(this.cursor.y * (this.initialData.heightProportion), 10)
+        if (this.cursor.y) {
+          return -(
+              this.cursor.y * this.initialData.heightProportion - this.cursor.y - this.border
+//              (this.initialData.wrapperWidth / 4)
+          )
+        }
       }
     }
   }
@@ -102,24 +107,4 @@
          alt="">
   </div>
 </template>
-<style>
-  .content.window.fix {
-    position: relative;
-    overflow: hidden;
-    min-height: 320px;
-  }
-  .content {
-    flex-grow: 1;
-    border: none;
-    border-top: 1px solid rgba(34, 36, 38, .1);
-    background: 0 0;
-    margin: 0;
-    padding: 1em;
-    box-shadow: none;
-    font-size: 1em;
-    border-radius: 0;
-  }
-  .content.window > img {
-    position: absolute;
-  }
-</style>
+<style></style>
