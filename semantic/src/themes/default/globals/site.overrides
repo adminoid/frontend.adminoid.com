@@ -72,7 +72,5 @@ li {
 
 @import "../pages/portfolio";
 
-//@import "../pages/reviews";
-#reviews {
+@import "../pages/reviews";
 
-}
